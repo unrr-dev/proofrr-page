@@ -1,0 +1,359 @@
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Check,
+  MessageSquare,
+} from "lucide-react";
+
+import {
+  HOME_FEATURES,
+  INTEGRATIONS,
+  INTEGRATIONS_URL,
+  MAJOR_BENEFITS,
+  MINOR_BENEFITS,
+  PLATFORM_URL,
+  STEP_ITEMS,
+  WORKFLOWS,
+} from "@/lib/proofrr-content";
+import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { CtaSection } from "@/components/cta-section";
+import { Reveal } from "@/components/reveal";
+
+const integrationDots = [
+  { top: 44, left: "14%" },
+  { top: 44, left: "32%" },
+  { top: 44, left: "50%" },
+  { top: 44, left: "68%" },
+  { top: 44, left: "86%" },
+] as const;
+
+export function LandingPage() {
+  return (
+    <div className="pb-24">
+      <section className="container-shell relative pt-14 md:pt-20">
+        <div className="relative overflow-hidden rounded-[2rem] bg-white px-4 pb-20 pt-6 sm:px-8 md:px-10 md:pt-10">
+          <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(circle_at_top,rgba(112,165,255,0.18),transparent_70%)]" />
+
+          <Reveal className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
+            <div className="flex items-center gap-3 rounded-full border border-[#f0f2f6] bg-white/90 px-3 py-1.5 shadow-[0_10px_24px_rgba(16,16,17,0.05)]">
+              <Badge className="rounded-full bg-[#101011] px-3 py-1 text-white hover:bg-[#101011]">
+                New
+              </Badge>
+              <span className="text-sm font-medium text-[#2b2b2c]">
+                Revolutionize your project workflow
+              </span>
+            </div>
+
+            <h1 className="mt-8 font-heading text-[3.15rem] leading-[0.92] font-bold tracking-[-0.05em] text-[#27418d] sm:text-[4.5rem] md:text-[6.75rem]">
+              Go from draft to
+              <span className="mt-2 block text-[#3563f0]">
+                approved - 3x faster
+              </span>
+            </h1>
+
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-[#606266] sm:text-xl">
+              Manage projects, collect feedback, and get client approvals — all
+              in one simple, AI-powered workspace.
+            </p>
+
+            <Link
+              href={PLATFORM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "proofrr-button-shadow mt-9 h-14 rounded-full border-0 bg-[linear-gradient(180deg,#4d7fff_0%,#3563f0_100%)] px-7 text-[16px] font-semibold text-white hover:brightness-105"
+              )}
+            >
+              Sign Up for the Beta
+              <span className="ml-3 flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#3563f0]">
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </Reveal>
+
+          <div className="relative mt-10 h-[420px] sm:h-[520px] md:h-[640px]">
+            <div className="proofrr-hero-plane absolute inset-x-0 top-6 h-[250px] origin-top [transform:perspective(1200px)_rotateX(72deg)] opacity-90" />
+            <div className="absolute inset-x-0 top-0 h-44 bg-[linear-gradient(to_bottom,white,rgba(255,255,255,0.4),transparent)]" />
+            <div className="absolute bottom-5 right-2 flex items-center gap-2 sm:right-4">
+              <div className="flex h-11 w-6 items-center justify-center rounded-full border border-[#d9dce6] bg-white shadow-[0_8px_18px_rgba(16,16,17,0.08)]">
+                <div className="h-5 w-3 rounded-full bg-[#101011]" />
+              </div>
+              <div className="flex h-11 w-6 items-center justify-center rounded-full border border-[#d9dce6] bg-white shadow-[0_8px_18px_rgba(16,16,17,0.08)]">
+                <div className="h-5 w-3 rounded-full bg-[#101011]" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell pt-6 md:pt-10">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#3563f0]">
+            The ultimate platform for marketing teams
+          </p>
+          <h2 className="mt-4 font-heading text-4xl font-semibold tracking-tight text-[#101011] sm:text-5xl">
+            One place for your brand’s creatives — upload, share, get approvals.
+            Zero chaos.
+          </h2>
+        </Reveal>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {HOME_FEATURES.map((feature, index) => (
+            <Reveal key={feature.title} delay={index * 0.07}>
+              <Card
+                className="proofrr-card-shadow rounded-[2rem] border-0 bg-white pb-5"
+              >
+                <div className={cn("mx-3 mt-3 overflow-hidden rounded-[1.65rem]", feature.tint)}>
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={1920}
+                    height={1080}
+                    loading="eager"
+                    className="h-auto w-full object-cover object-top"
+                  />
+                </div>
+                <CardHeader className="px-6 pt-1">
+                  <CardTitle className="font-heading text-[2rem] font-semibold leading-tight">
+                    {feature.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="px-6">
+                  <CardDescription className="text-base leading-8 text-[#606266]">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell pt-20 md:pt-28">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="space-y-8">
+            <Reveal>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#3563f0]">
+                Simplify your workflow
+              </p>
+            </Reveal>
+            {STEP_ITEMS.map((item, index) => (
+              <Reveal key={item.number} delay={index * 0.06} className="flex gap-5">
+                <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f2f6] text-lg font-semibold text-[#606266]">
+                  {item.number}
+                </div>
+                <div>
+                  <h3 className="font-heading text-3xl font-semibold text-[#101011]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 max-w-xl text-lg leading-8 text-[#606266]">
+                    {item.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={0.12}>
+            <div className="relative overflow-hidden rounded-[2rem] bg-[#f0f2f6] p-5 sm:p-8">
+              <div className="proofrr-grid absolute inset-0 opacity-40" />
+              <div className="relative z-10 overflow-hidden rounded-[2rem] bg-white/90 shadow-[0_24px_50px_rgba(16,16,17,0.08)]">
+                <Image
+                  src="/proofrr/candidate-trgl.png"
+                  alt="Upload any file"
+                  width={966}
+                  height={894}
+                  loading="eager"
+                  className="h-auto w-full"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="integrations" className="container-shell pt-20 md:pt-28">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[2rem] bg-[#f0f2f6] p-6 sm:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center_bottom,rgba(53,99,240,0.08),transparent_52%)]" />
+              <div className="relative mx-auto flex min-h-[360px] max-w-[520px] items-end justify-center pb-8 pt-6">
+                <svg
+                  viewBox="0 0 500 260"
+                  className="absolute inset-x-0 top-12 h-[230px] w-full"
+                  aria-hidden="true"
+                >
+                  {integrationDots.map((dot, index) => (
+                    <path
+                      key={dot.left}
+                      d={`M ${70 + index * 90} 20 C ${70 + index * 90} 120, 250 130, 250 235`}
+                      fill="none"
+                      stroke="rgba(112, 165, 255, 0.4)"
+                      strokeWidth="2"
+                    />
+                  ))}
+                </svg>
+                <div className="absolute inset-x-0 top-0 flex justify-between gap-4 px-2 sm:px-4">
+                  {INTEGRATIONS.map((integration) => (
+                    <div
+                      key={integration.alt}
+                      className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-[0_12px_24px_rgba(16,16,17,0.08)] sm:h-18 sm:w-18"
+                    >
+                      <Image
+                        src={integration.src}
+                        alt={integration.alt}
+                        width={44}
+                        height={44}
+                        loading="eager"
+                        className="h-10 w-10 rounded-xl object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="proofrr-button-shadow flex h-24 w-24 items-center justify-center rounded-[1.65rem] bg-[linear-gradient(180deg,#3e75ff_0%,#3563f0_100%)]">
+                  <Image
+                    src="/proofrr/logo-mark.svg"
+                    alt="Proofrr mascot"
+                    width={64}
+                    height={64}
+                    className="h-16 w-16"
+                  />
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#3563f0]">
+              One platform, unlimited integrations
+            </p>
+            <h2 className="mt-4 font-heading text-4xl font-semibold tracking-tight text-[#101011] sm:text-5xl">
+              Connect the tools your team already relies on.
+            </h2>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-[#606266]">
+              Proofrr sits in the middle of your review process so files,
+              calendars, calls, AI tools, and delivery workflows stay connected.
+            </p>
+            <Link
+              href={INTEGRATIONS_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#101011] px-6 text-[15px] font-semibold text-white shadow-[0_18px_28px_rgba(16,16,17,0.2)] transition-transform hover:-translate-y-0.5"
+            >
+              View all integrations
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="container-shell pt-20 md:pt-28">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#3563f0]">
+            Power up your creative workflow with next-gen features
+          </p>
+        </Reveal>
+        <div className="proofrr-dark-glow mt-8 rounded-[2.2rem] px-6 py-8 sm:px-8 md:px-10 md:py-10">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {MAJOR_BENEFITS.map((benefit, index) => (
+              <Reveal key={benefit.title} delay={index * 0.06}>
+                <div className="overflow-hidden rounded-[2rem] border border-[#2b2b2c] bg-[#2b2b2c]">
+                  <div className="relative flex min-h-[300px] items-center justify-center bg-[#101011] px-6">
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-[radial-gradient(circle_at_center_bottom,rgba(255,255,255,0.09),transparent_60%)]" />
+                  <Image
+                    src={benefit.icon}
+                    alt=""
+                    width={165}
+                    height={165}
+                    loading="eager"
+                    className="h-auto w-[120px] sm:w-[145px]"
+                  />
+                  </div>
+                  <div className="px-7 py-6">
+                    <h3 className="font-heading text-3xl font-semibold text-white">
+                      {benefit.title}
+                    </h3>
+                    <p className="mt-3 text-base leading-8 text-[#a7a7a7]">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {MINOR_BENEFITS.map((item, index) => (
+              <Reveal key={item.title} delay={0.12 + index * 0.05}>
+                <div className="rounded-[1.6rem] border border-[#2b2b2c] bg-[#2b2b2c] px-5 py-5">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
+                    <Check className="h-5 w-5 text-white" />
+                  </div>
+                  <h4 className="font-heading text-2xl font-semibold text-white">
+                    {item.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-7 text-[#a7a7a7]">
+                    {item.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell pt-20 md:pt-28">
+        <div className="relative overflow-hidden rounded-[2rem] bg-white px-5 py-10 sm:px-8 md:px-10">
+          <div className="proofrr-grid-fade opacity-90" />
+          <div className="relative z-10">
+            <Reveal className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#3563f0]">
+                The perfect review solution for every workflow
+              </p>
+            </Reveal>
+            <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1fr_0.92fr]">
+              <Reveal>
+                <div className="overflow-hidden rounded-[2rem] bg-[#f0f2f6] p-4 shadow-[0_20px_50px_rgba(16,16,17,0.08)]">
+                  <Image
+                    src="/proofrr/candidate-qed.png"
+                    alt="Comment workflow"
+                    width={1000}
+                    height={1000}
+                    loading="eager"
+                    className="h-auto w-full rounded-[1.5rem]"
+                  />
+                </div>
+              </Reveal>
+              <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+                {WORKFLOWS.map((workflow, index) => (
+                  <Reveal
+                    key={workflow}
+                    delay={index * 0.04}
+                    className="flex items-center gap-3 text-lg font-medium text-[#2b2b2c]"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#edf2ff] text-[#3563f0]">
+                      <MessageSquare className="h-4 w-4" />
+                    </span>
+                    <span>{workflow}</span>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CtaSection className="pt-20 md:pt-28" />
+    </div>
+  );
+}
