@@ -30,14 +30,14 @@ export function SiteHeader() {
         <div className="proofrr-nav-shadow flex items-center justify-between rounded-[2rem] border border-[#cfe0ff] bg-[rgba(240,242,246,0.84)] px-3 py-3 backdrop-blur-xl md:px-6">
           <Link
             href="/"
-            className="proofrr-button-shadow flex h-12 items-center rounded-full bg-[linear-gradient(180deg,#3e75ff_0%,#3563f0_100%)] px-4"
+            className="proofrr-button-shadow flex h-12 items-center overflow-hidden rounded-full"
           >
             <Image
               src="/proofrr/logo-nav.svg"
               alt="Proofrr"
-              width={84}
-              height={26}
-              style={{ width: 84, height: "auto" }}
+              width={107}
+              height={48}
+              className="block h-12 w-auto"
               priority
             />
           </Link>

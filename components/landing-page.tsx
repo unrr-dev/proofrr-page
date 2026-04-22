@@ -228,13 +228,13 @@ export function LandingPage() {
                     </div>
                   ))}
                 </div>
-                <div className="proofrr-button-shadow flex h-24 w-24 items-center justify-center rounded-[1.65rem] bg-[linear-gradient(180deg,#3e75ff_0%,#3563f0_100%)]">
+                <div className="proofrr-button-shadow overflow-hidden rounded-[1.7rem]">
                   <Image
                     src="/proofrr/logo-mark.svg"
                     alt="Proofrr mascot"
-                    width={64}
-                    height={64}
-                    className="h-16 w-16"
+                    width={120}
+                    height={120}
+                    className="block h-[120px] w-[120px]"
                   />
                 </div>
               </div>
