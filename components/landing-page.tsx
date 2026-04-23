@@ -217,7 +217,7 @@ export function LandingPage() {
                 <svg
                   viewBox="0 0 500 260"
                   preserveAspectRatio="none"
-                  className="pointer-events-none absolute inset-x-0 top-12 h-[230px] w-full"
+                  className="pointer-events-none absolute inset-x-0 top-12 z-0 h-[230px] w-full"
                   aria-hidden="true"
                 >
                   {INTEGRATION_CONNECTORS.map((connector) => (
@@ -245,7 +245,7 @@ export function LandingPage() {
                     </g>
                   ))}
                 </svg>
-                <div className="absolute inset-x-0 top-0 grid grid-cols-5 gap-3 px-2 sm:px-4">
+                <div className="absolute inset-x-0 top-0 z-10 grid grid-cols-5 gap-3 px-2 sm:px-4">
                   {INTEGRATIONS.map((integration) => (
                     <div
                       key={integration.alt}
@@ -269,7 +269,7 @@ export function LandingPage() {
                   height={96}
                   loading="eager"
                   unoptimized
-                  className="proofrr-button-shadow h-24 w-24 rounded-[1.65rem]"
+                  className="proofrr-button-shadow relative z-10 h-24 w-24 rounded-[1.65rem]"
                 />
               </div>
             </div>
