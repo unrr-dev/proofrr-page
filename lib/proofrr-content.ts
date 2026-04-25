@@ -141,28 +141,28 @@ export const FAQ_ITEMS = [
   {
     question: "What is Proofrr?",
     answer:
-      "Proofrr is a creative collaboration and feedback platform built to keep briefs, comments, approvals, and version tracking in one place.",
+      "Proofrr is an all-in-one creative collaboration platform that helps teams manage projects, review creatives, and exchange clear, contextual feedback without scattered emails, WhatsApp threads, or confusing approvals.",
   },
   {
     question:
       "How is Proofrr different from tools like Drive, WhatsApp, or generic proofing software?",
     answer:
-      "Proofrr keeps project management, review, proofing, and approvals in a single workflow instead of splitting them across chat threads, file drives, and disconnected review tools.",
+      "Unlike generic tools, Proofrr is built specifically for creative workflows. It combines visual proofing, AI-powered feedback, version comparison, and client-friendly reviews in one lightweight interface, so feedback doesn't get lost or diluted.",
   },
   {
     question: "Do clients need to sign up or log in to give feedback?",
     answer:
-      "No. Proofrr is designed for no-login feedback flows, so external reviewers can comment quickly without slowing approvals down.",
+      "No. Clients can review and comment instantly through a no-login system. This removes friction, speeds up approvals, and makes collaboration easier for non-technical stakeholders.",
   },
   {
     question: "Who is Proofrr best suited for?",
     answer:
-      "It is built for freelancers, agencies, marketing teams, design teams, video teams, and growing brands that need faster creative approvals.",
+      "Proofrr is ideal for freelancers, small creative agencies, and brands that manage frequent creative revisions, especially teams that want fast feedback, fewer tools, and predictable pricing without per-user costs.",
   },
   {
     question: "Is Proofrr free to use?",
     answer:
-      "Proofrr is currently in beta. The product positioning focuses on early access and waitlist onboarding while pricing details continue to evolve.",
+      "Yes. Proofrr has a free plan that lets you review creatives, share feedback, and collaborate with clients at no cost. Upgrade anytime to access advanced AI features and expanded controls as your workflow grows.",
   },
 ] as const;
 
