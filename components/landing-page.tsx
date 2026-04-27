@@ -261,7 +261,8 @@ export function LandingPage() {
                         width={44}
                         height={44}
                         loading="eager"
-                        className="h-10 w-10 rounded-xl object-cover"
+                        
+                        className={`rounded-xl object-cover ${integration.alt === "Razorpay" ? "h-18 w-18" : "h-10 w-10"}`}
                       />
                     </div>
                   ))}
