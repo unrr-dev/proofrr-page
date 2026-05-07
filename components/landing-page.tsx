@@ -344,8 +344,8 @@ export function LandingPage() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {MINOR_BENEFITS.map((item, index) => (
-              <Reveal key={item.title} delay={0.12 + index * 0.05}>
-                <div className="rounded-[1.6rem] border border-[#2b2b2c] bg-[#2b2b2c] px-5 py-5">
+              <Reveal key={item.title} delay={0.12 + index * 0.05} className="h-full">
+                <div className="h-full rounded-[1.6rem] border border-[#2b2b2c] bg-[#2b2b2c] px-5 py-5">
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
                     <Check className="h-5 w-5 text-white" />
                   </div>
