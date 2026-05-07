@@ -36,7 +36,7 @@ export function ProofrrLinkButton({
         className
       )}
     >
-      <span className="relative grid overflow-hidden leading-none">
+      <span className="relative grid overflow-hidden py-[0.12em] leading-[1.2]">
         <span className="col-start-1 row-start-1 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] [transform:perspective(500px)_translateY(0)_rotateX(0deg)] group-hover/proofrr-button:opacity-0 group-hover/proofrr-button:[transform:perspective(500px)_translateY(-55%)_rotateX(60deg)]">
           {label}
         </span>
