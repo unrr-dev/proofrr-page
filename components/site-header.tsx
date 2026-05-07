@@ -29,7 +29,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 pt-4 md:pt-6">
       <div className="container-shell">
-        <div className="proofrr-nav-shadow flex items-center justify-between rounded-[2rem] border border-[#cfe0ff] bg-[rgba(240,242,246,0.84)] px-3 py-3 backdrop-blur-xl md:px-6">
+        <div className="proofrr-nav-shadow flex items-center justify-between rounded-full border border-[#cfe0ff] bg-[rgba(240,242,246,0.84)] px-3 py-3 backdrop-blur-xl md:px-6">
           <Link
             href="/"
             aria-label="Proofrr home"
