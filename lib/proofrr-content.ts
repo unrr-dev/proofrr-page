@@ -1,3 +1,5 @@
+import { BLOG_ARTICLES } from "./blog-content";
+
 export const PLATFORM_URL = "https://platform.proofrr.com/";
 export const INTEGRATIONS_URL = "https://platform.proofrr.com/";
 export const HERO_DEMO_VIDEO_URL =
@@ -260,50 +262,73 @@ type BlogPostSeed = {
   date: string;
   title: string;
   excerpt: string;
+  coverImage: string;
 };
 
 const blogSeed: BlogPostSeed[] = [
+  {
+    date: "Mar 20, 2026",
+    title: "Why Clients Always Ask for Changes After Approving Creative",
+    excerpt:
+      "The approval came in. You exhaled. Then, three days later: 'Actually, can we just tweak one more thing?' Here's why it keeps happening.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_8_z9wvew.png",
+  },
   {
     date: "Jan 4, 2026",
     title: "How a Lack of Boundaries Kills Creative Proofing Quality",
     excerpt:
       "Why review chaos spreads when approval roles are fuzzy, and how stronger boundaries tighten feedback loops.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_1_pt4noz.png",
   },
   {
     date: "Jan 3, 2026",
     title: "The Hidden Cost of Decision Fatigue in Creative Feedback",
     excerpt:
       "Too many reviewers and too many channels burn time fast. This piece looks at the real drag on approvals.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_2_mumrst.png",
   },
   {
     date: "Jan 2, 2026",
     title: "The Creative Project Manager's Checklist for Flawless Marketing Campaigns",
     excerpt:
       "A straightforward review checklist to keep marketing projects moving from brief to approval without drift.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_3_wqewuv.png",
   },
   {
     date: "Jan 2, 2026",
     title: "4 Signs Your Team Has Outgrown Email for Creative Feedback",
     excerpt:
       "A quick diagnostic for spotting when inbox-based approvals are slowing your team more than helping.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_4_vnigiq.png",
   },
   {
     date: "Oct 13, 2025",
     title: "Beyond PDFs: How to Proof and Approve Interactive Web Pages and Videos",
     excerpt:
       "Creative proofing is no longer static. Learn what changes when the work is interactive, motion-heavy, and live.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_5_oebvtz.png",
   },
   {
     date: "Oct 13, 2025",
     title: "The Cost of Clutter: How Poor Version Control is Killing Your Margins",
     excerpt:
       "Version sprawl quietly creates rework, delay, and wasted budget. This article focuses on the operational cost.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_6_cjeipy.png",
   },
   {
     date: "Dec 31, 2025",
     title: "The Ultimate Guide to Giving Actionable Creative Feedback",
     excerpt:
       "A practical guide to feedback that designers and marketers can actually implement without another clarification thread.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_7_pccwuz.png",
   },
   {
     date: "Dec 30, 2025",
@@ -311,6 +336,8 @@ const blogSeed: BlogPostSeed[] = [
       "Proofing vs. Editing: Understanding the Critical Differences in Your Creative Workflow",
     excerpt:
       "Two similar-sounding steps create very different outcomes. This article clarifies where each belongs.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_8_z9wvew.png",
   },
   {
     date: "Dec 30, 2025",
@@ -318,24 +345,32 @@ const blogSeed: BlogPostSeed[] = [
       "Is Your Brand Compliant? Why Creative Proofing is Your First Line of Defense",
     excerpt:
       "Brand risk often shows up in review. This piece explains how proofing helps catch compliance issues early.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520147/Proofrr_Blog_9_rtica9.png",
   },
   {
     date: "Dec 29, 2025",
     title: "Stop the Email Chaos: The Modern Solution for Marketing Feedback",
     excerpt:
       "What modern feedback workflows look like when email stops being the default operating system.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_10_uo2y3v.png",
   },
   {
     date: "Dec 29, 2025",
     title: "5 Simple Steps to Streamline Your Document Proofing Workflow",
     excerpt:
       "Five concise process improvements that make approvals faster without introducing extra project overhead.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_11_cjrfbj.png",
   },
   {
     date: "Dec 29, 2025",
     title: "How to Halve Your Creative Approval Time with Online Proofing",
     excerpt:
       "A tighter proofing loop, fewer revision passes, and better visibility can cut turnaround time dramatically.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_12_whgrno.png",
   },
 ];
 
@@ -345,17 +380,13 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-export const BLOG_POSTS = blogSeed.map((post) => ({
-  ...post,
-  slug: slugify(post.title),
-  content: [
-    `${post.title} reflects the same theme that runs through Proofrr's product copy: creative work moves faster when feedback, versions, and approvals stay in one clear system.`,
-    "The public site consistently positions scattered review channels as the core problem. Email threads, chat apps, and disconnected file links slow decisions, blur ownership, and create avoidable revision loops.",
-    "A stronger workflow replaces that fragmentation with clear context, review stages, and single-source visibility for teams and clients.",
-  ],
-  takeaways: [
-    "Reduce tool-switching during review.",
-    "Keep comments tied directly to the work.",
-    "Shorten approval paths with clearer ownership.",
-  ],
-}));
+export const BLOG_POSTS = blogSeed.map((post) => {
+  const slug = slugify(post.title);
+  const article = BLOG_ARTICLES[slug];
+  return {
+    ...post,
+    slug,
+    content: article?.content ?? [],
+    takeaways: article?.takeaways ?? [],
+  };
+});
