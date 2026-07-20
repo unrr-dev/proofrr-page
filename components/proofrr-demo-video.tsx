@@ -152,11 +152,14 @@ export function ProofrrDemoVideo({
         <button
           type="button"
           onClick={handleManualPlay}
-          className="absolute inset-0 flex items-center justify-center bg-black/10 transition-opacity"
+          className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,rgba(16,16,17,0.08),rgba(16,16,17,0.22))] transition-opacity hover:bg-[radial-gradient(circle,rgba(16,16,17,0.12),rgba(16,16,17,0.28))]"
           aria-label="Play demo video"
         >
-          <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white text-[#101011] shadow-[0_18px_40px_rgba(16,16,17,0.3)] transition-transform duration-300 hover:scale-110">
-            <Play className="ml-1.5 h-8 w-8 fill-current text-slate-800" />
+          <span className="flex items-center gap-3 rounded-full bg-white/94 px-5 py-3 text-sm font-semibold text-[#101011] shadow-[0_18px_40px_rgba(16,16,17,0.18)] backdrop-blur">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#3563f0] text-white">
+              <Play className="ml-0.5 h-4 w-4 fill-current" />
+            </span>
+            Play demo
           </span>
         </button>
       ) : null}

@@ -7,21 +7,21 @@ export const HERO_DEMO_VIDEO_URL =
 
 export const NAV_LINKS = [
   { href: "/about", label: "About" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
 export const FOOTER_QUICK_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/#pricing", label: "Pricing" },
 ] as const;
 
 export const FOOTER_ALL_PAGES = [
-  { href: "/about", label: "About" },
-  { href: "/privacy", label: "Privacy Policy" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About us" },
+  { href: "/contact", label: "Contact us" },
   { href: "/blog", label: "Blog" },
+  { href: "/waitlist", label: "Waitlist" },
 ] as const;
 
 export const SOCIAL_LINKS = [

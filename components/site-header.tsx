@@ -60,22 +60,13 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-6 lg:flex">
-            <Link
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[15px] font-semibold text-[#3563f0] hover:text-[#254cc9]"
-            >
-              Sign In
-            </Link>
+          <div className="hidden items-center gap-3 lg:flex">
             <ProofrrLinkButton
               href={PLATFORM_URL}
-              label="Start Free"
+              label="Sign in"
               target="_blank"
               rel="noreferrer"
-              withArrow
-              className="proofrr-button-shadow h-11 rounded-full border-0 bg-[#3563f0] px-6 text-[15px] font-semibold text-white transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_12px_24px_rgba(53,99,240,0.3)] hover:-translate-y-0.5"
+              className="proofrr-button-shadow h-12 rounded-full border-0 bg-[linear-gradient(180deg,#4d7fff_0%,#3563f0_100%)] px-8 text-[15px] font-semibold text-white"
             />
           </div>
 
@@ -122,26 +113,18 @@ export function SiteHeader() {
                     </Link>
                   ))}
                 </div>
-                <div className="flex flex-col gap-3 px-5 pb-6">
-                  <Link
-                    href={PLATFORM_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex h-12 w-full items-center justify-center rounded-full border border-[#d7e3ff] text-[15px] font-semibold text-[#3563f0] hover:bg-[#f0f5ff]"
-                  >
-                    Sign In
-                  </Link>
+                <div className="px-5 pb-6">
                   <Link
                     href={PLATFORM_URL}
                     target="_blank"
                     rel="noreferrer"
                     className={cn(
                       buttonVariants({ size: "lg" }),
-                      "proofrr-button-shadow flex h-12 w-full items-center justify-center gap-2 rounded-full border-0 bg-[#3563f0] text-[15px] font-semibold text-white hover:brightness-105"
+                      "proofrr-button-shadow flex h-12 w-full items-center justify-center gap-2 rounded-full border-0 bg-[linear-gradient(180deg,#4d7fff_0%,#3563f0_100%)] text-[15px] font-semibold text-white hover:brightness-105"
                     )}
                   >
                     <Sparkles className="h-4 w-4" />
-                    Start Free
+                    Sign in
                   </Link>
                 </div>
               </SheetContent>
