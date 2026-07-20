@@ -9,7 +9,7 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 bg-[#101011] text-white">
+    <footer className="mt-0 bg-[#101011] text-white">
       <div className="container-shell">
         <div className="rounded-t-[2rem] bg-[#101011] px-6 py-14 md:px-10">
           <div className="grid gap-12 lg:grid-cols-[1.35fr_0.85fr_0.85fr]">
@@ -66,12 +66,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="mt-12 border-t border-[#2b2b2c] pt-6 text-center text-sm text-[#a7a7a7]">
-            Designed with ♥️ by{" "}
-            <Link href="https://www.webestica.com/" target="_blank" rel="noreferrer" className="text-white hover:text-[#70a5ff]">
-              Proofrr
-            </Link>
-          </div>
+          {/* Bottom section omitted to match mockup */}
         </div>
       </div>
     </footer>
