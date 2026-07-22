@@ -100,7 +100,7 @@ export function LandingPage() {
       {/* Core Benefits Row */}
       <section className="w-full py-8 md:py-12 relative z-10 flex justify-center px-0 mx-0">
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784300190/Frame_4_tnjufp.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712373/Frame_4_1_cqnvt0.png"
           alt="Proofrr Benefits: Faster Feedback, Clear Approvals, AI-powered Summaries, Real-time Comments"
           width={1920}
           height={200}
