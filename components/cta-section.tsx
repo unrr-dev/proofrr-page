@@ -20,7 +20,7 @@ export function CtaSection({ className }: CtaSectionProps) {
         className="w-full block transition-transform duration-300 hover:scale-[1.002]"
       >
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784295686/Frame_1000002119_1_fbgixi.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784713026/Frame_1000002119_3_ekuklx.png"
           alt="Take your creative workflow to the next level! Start Free"
           width={1920}
           height={600}
