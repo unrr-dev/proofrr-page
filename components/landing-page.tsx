@@ -136,7 +136,7 @@ export function LandingPage() {
           className="w-full max-w-[1200px] block transition-transform duration-300 hover:scale-[1.005]"
         >
           <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784294974/Frame_101_epophx.png"
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712581/Frame_101_1_tjwazv.png"
             alt="Proofrr Integrations - Connect the tools your team already relies on"
             width={1200}
             height={550}
