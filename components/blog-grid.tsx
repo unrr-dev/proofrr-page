@@ -33,32 +33,20 @@ export function BlogGrid({ posts }: BlogGridProps) {
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full">
         {visiblePosts.map((post, index) => (
           <Reveal key={`${post.slug}-${index}`} delay={(index % 3) * 0.05}>
-            <Link href={`/blog/${post.slug}`} className="block h-full">
-              <Card className="proofrr-card-shadow h-full rounded-[1.8rem] border border-slate-100 bg-white py-0 transition-transform duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between">
-                <div>
-                  <div className="relative aspect-[543/645] w-full overflow-hidden">
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    />
-                  </div>
-                  <CardHeader className="px-6 pt-5 pb-3">
-                    <p className="text-sm font-medium text-[#606266] mb-1">{post.date}</p>
-                    <CardTitle className="font-heading text-[1.25rem] font-bold leading-snug text-[#101011] tracking-tight">
-                      {post.title}
-                    </CardTitle>
-                  </CardHeader>
-                </div>
-                <CardContent className="px-6 pb-6 pt-0">
-                  <div className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#3563f0] hover:text-[#254cc9]">
-                    Read article
-                    <ArrowUpRight className="h-4 w-4 text-[#3563f0]" />
-                  </div>
-                </CardContent>
-              </Card>
+            <Link
+              href={`/blog/${post.slug}`}
+              className="block h-full transition-transform duration-300 hover:-translate-y-1.5"
+            >
+              <div className="relative aspect-[543/645] w-full">
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  priority={index < 3}
+                />
+              </div>
             </Link>
           </Reveal>
         ))}
