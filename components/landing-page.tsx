@@ -120,7 +120,7 @@ export function LandingPage() {
 
       <section className="relative z-10 flex justify-center pt-4 md:pt-6 w-full px-0 mx-0">
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784293167/Flow_of_user_of9nqn.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712807/Flow_of_user_1_kwfumg.png"
           alt="Simplify Your Workflow - Up and running in minutes"
           width={1920}
           height={600}
