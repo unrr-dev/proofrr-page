@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, League_Spartan } from "next/font/google";
+import { Lato, League_Spartan, Playfair_Display } from "next/font/google";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 import "./globals.css";
 
-const bodyFont = Inter({
+const bodyFont = Lato({
   variable: "--font-copy",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "700", "900"],
 });
 
 const headingFont = League_Spartan({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "900"],
+});
+
+const italicSerifFont = Playfair_Display({
+  variable: "--font-serif-italic",
+  subsets: ["latin"],
+  style: ["italic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${headingFont.variable} antialiased`}>
+    <html lang="en" className={`${bodyFont.variable} ${headingFont.variable} ${italicSerifFont.variable} antialiased`}>
       <body
         suppressHydrationWarning
         className="min-h-screen bg-background text-foreground"
