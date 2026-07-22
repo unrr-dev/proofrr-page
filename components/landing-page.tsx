@@ -110,7 +110,7 @@ export function LandingPage() {
 
       <section className="relative z-10 flex justify-center pt-16 md:pt-24 w-full px-0 mx-0">
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784297050/Frame_1000002101_smmtpf.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712430/Frame_1000002101_1_sofvwl.png"
           alt="Why Proofrr? Everything you need to review, all in one place."
           width={1920}
           height={1000}
