@@ -267,20 +267,52 @@ type BlogPostSeed = {
 
 const blogSeed: BlogPostSeed[] = [
   {
-    date: "Mar 20, 2026",
-    title: "Why Clients Always Ask for Changes After Approving Creative",
+    date: "June 20, 2026",
+    title: "Why Clients Always Ask for Changes After Approving Creative Read article",
     excerpt:
       "The approval came in. You exhaled. Then, three days later: 'Actually, can we just tweak one more thing?' Here's why it keeps happening.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_8_z9wvew.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
   },
   {
-    date: "Jan 4, 2026",
-    title: "How a Lack of Boundaries Kills Creative Proofing Quality",
+    date: "June 25, 2026",
+    title: "How a Lack of Boundaries Kills Creative Proofrr Quality",
     excerpt:
       "Why review chaos spreads when approval roles are fuzzy, and how stronger boundaries tighten feedback loops.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_1_pt4noz.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+  },
+  {
+    date: "July 2, 2026",
+    title: "Stop The Email Chaos: The Modern Solutions for Marketing Feedback",
+    excerpt:
+      "What modern feedback workflows look like when email stops being the default operating system.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+  },
+  {
+    date: "June 25, 2026",
+    title: "How a Lack of Boundaries Kills Creative Proofrr Quality",
+    excerpt:
+      "Why review chaos spreads when approval roles are fuzzy, and how stronger boundaries tighten feedback loops.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+  },
+  {
+    date: "July 2, 2026",
+    title: "Stop The Email Chaos: The Modern Solutions for Marketing Feedback",
+    excerpt:
+      "What modern feedback workflows look like when email stops being the default operating system.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+  },
+  {
+    date: "June 20, 2026",
+    title: "Why Clients Always Ask for Changes After Approving Creative Read article",
+    excerpt:
+      "The approval came in. You exhaled. Then, three days later: 'Actually, can we just tweak one more thing?' Here's why it keeps happening.",
+    coverImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
   },
   {
     date: "Jan 3, 2026",
@@ -288,7 +320,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Too many reviewers and too many channels burn time fast. This piece looks at the real drag on approvals.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_2_mumrst.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
   },
   {
     date: "Jan 2, 2026",
@@ -296,7 +328,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "A straightforward review checklist to keep marketing projects moving from brief to approval without drift.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_3_wqewuv.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
   },
   {
     date: "Jan 2, 2026",
@@ -304,7 +336,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "A quick diagnostic for spotting when inbox-based approvals are slowing your team more than helping.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_4_vnigiq.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
   },
   {
     date: "Oct 13, 2025",
@@ -312,7 +344,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Creative proofing is no longer static. Learn what changes when the work is interactive, motion-heavy, and live.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_5_oebvtz.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
   },
   {
     date: "Oct 13, 2025",
@@ -320,7 +352,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Version sprawl quietly creates rework, delay, and wasted budget. This article focuses on the operational cost.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_6_cjeipy.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
   },
   {
     date: "Dec 31, 2025",
@@ -328,7 +360,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "A practical guide to feedback that designers and marketers can actually implement without another clarification thread.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520145/Proofrr_Blog_7_pccwuz.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
   },
   {
     date: "Dec 30, 2025",
@@ -337,7 +369,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Two similar-sounding steps create very different outcomes. This article clarifies where each belongs.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_8_z9wvew.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
   },
   {
     date: "Dec 30, 2025",
@@ -346,15 +378,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Brand risk often shows up in review. This piece explains how proofing helps catch compliance issues early.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520147/Proofrr_Blog_9_rtica9.png",
-  },
-  {
-    date: "Dec 29, 2025",
-    title: "Stop the Email Chaos: The Modern Solution for Marketing Feedback",
-    excerpt:
-      "What modern feedback workflows look like when email stops being the default operating system.",
-    coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_10_uo2y3v.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
   },
   {
     date: "Dec 29, 2025",
@@ -362,7 +386,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Five concise process improvements that make approvals faster without introducing extra project overhead.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_11_cjrfbj.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
   },
   {
     date: "Dec 29, 2025",
@@ -370,7 +394,7 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "A tighter proofing loop, fewer revision passes, and better visibility can cut turnaround time dramatically.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1778520146/Proofrr_Blog_12_whgrno.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
   },
 ];
 
@@ -382,7 +406,20 @@ const slugify = (value: string) =>
 
 export const BLOG_POSTS = blogSeed.map((post) => {
   const slug = slugify(post.title);
-  const article = BLOG_ARTICLES[slug];
+  
+  // Resolve standard key for content lookup
+  let lookupKey = slug;
+  if (lookupKey.endsWith("-read-article")) {
+    lookupKey = lookupKey.slice(0, -"-read-article".length);
+  }
+  if (lookupKey === "how-a-lack-of-boundaries-kills-creative-proofrr-quality") {
+    lookupKey = "how-a-lack-of-boundaries-kills-creative-proofing-quality";
+  }
+  if (lookupKey === "stop-the-email-chaos-the-modern-solutions-for-marketing-feedback") {
+    lookupKey = "stop-the-email-chaos-the-modern-solution-for-marketing-feedback";
+  }
+
+  const article = BLOG_ARTICLES[lookupKey];
   return {
     ...post,
     slug,

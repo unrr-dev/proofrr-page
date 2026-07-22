@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 
 import { BLOG_POSTS } from "@/lib/proofrr-content";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Reveal } from "@/components/reveal";
+import { BlogGrid } from "@/components/blog-grid";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -24,37 +21,7 @@ export default function BlogPage() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {BLOG_POSTS.map((post, index) => (
-            <Reveal key={post.slug} delay={index * 0.03}>
-              <Link href={`/blog/${post.slug}`} className="block h-full">
-                <Card className="proofrr-card-shadow h-full rounded-[1.8rem] border-0 bg-white py-0 transition-transform hover:-translate-y-1">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-[1.8rem]">
-                    <Image
-                      src={post.coverImage}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    />
-                  </div>
-                  <CardHeader className="px-6 pt-4">
-                    <p className="text-sm font-medium text-[#606266]">{post.date}</p>
-                    <CardTitle className="font-heading text-[1.35rem] font-semibold leading-tight text-[#101011]">
-                      {post.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="px-6 pb-6">
-                    <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#101011]">
-                      Read article
-                      <ArrowUpRight className="h-4 w-4" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <BlogGrid posts={BLOG_POSTS} />
       </section>
     </div>
   );
