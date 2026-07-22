@@ -148,7 +148,7 @@ export function LandingPage() {
       {/* Testimonials Section */}
       <section className="relative z-10 flex justify-center pt-20 md:pt-28 w-full px-0 mx-0">
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784295264/Frame_1000002113_jd0vlt.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712689/Frame_1000002113_1_qogfsq.png"
           alt="Teams that moved to Proofrr, love it."
           width={1920}
           height={960}
