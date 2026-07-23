@@ -18,7 +18,7 @@ export default function AboutPage() {
           alt="Built for How Creative Work Actually Happens"
           width={1440}
           height={936}
-          className="w-full h-auto"
+          className="w-full h-auto dark:invert dark:hue-rotate-180"
           priority
         />
       </section>
@@ -30,7 +30,7 @@ export default function AboutPage() {
           alt="Why we built Proofrr: We didn't build another generic project management tool"
           width={1440}
           height={810}
-          className="w-full h-auto"
+          className="w-full h-auto dark:invert dark:hue-rotate-180"
           priority
         />
       </section>

@@ -24,7 +24,7 @@ export function CtaSection({ className }: CtaSectionProps) {
           alt="Take your creative workflow to the next level! Start Free"
           width={1920}
           height={600}
-          className="w-full h-auto"
+          className="w-full h-auto dark:invert dark:hue-rotate-180"
         />
       </Link>
     </section>

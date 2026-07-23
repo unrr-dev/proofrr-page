@@ -263,6 +263,7 @@ type BlogPostSeed = {
   title: string;
   excerpt: string;
   coverImage: string;
+  articleHeroImage?: string;
 };
 
 const blogSeed: BlogPostSeed[] = [
@@ -273,6 +274,8 @@ const blogSeed: BlogPostSeed[] = [
       "The approval came in. You exhaled. Then, three days later: 'Actually, can we just tweak one more thing?' Here's why it keeps happening.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
   },
   {
     date: "June 25, 2026",
@@ -281,6 +284,8 @@ const blogSeed: BlogPostSeed[] = [
       "Why review chaos spreads when approval roles are fuzzy, and how stronger boundaries tighten feedback loops.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784714919/dashboard_5_rcqrfq.png",
   },
   {
     date: "July 2, 2026",
@@ -289,6 +294,8 @@ const blogSeed: BlogPostSeed[] = [
       "What modern feedback workflows look like when email stops being the default operating system.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812223/dashboard_7_f7al3i.png",
   },
   {
     date: "June 25, 2026",
@@ -297,6 +304,8 @@ const blogSeed: BlogPostSeed[] = [
       "Why review chaos spreads when approval roles are fuzzy, and how stronger boundaries tighten feedback loops.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784714919/dashboard_5_rcqrfq.png",
   },
   {
     date: "July 2, 2026",
@@ -305,6 +314,8 @@ const blogSeed: BlogPostSeed[] = [
       "What modern feedback workflows look like when email stops being the default operating system.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812223/dashboard_7_f7al3i.png",
   },
   {
     date: "June 20, 2026",
@@ -313,6 +324,8 @@ const blogSeed: BlogPostSeed[] = [
       "The approval came in. You exhaled. Then, three days later: 'Actually, can we just tweak one more thing?' Here's why it keeps happening.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
   },
   {
     date: "Jan 3, 2026",
@@ -321,6 +334,8 @@ const blogSeed: BlogPostSeed[] = [
       "Too many reviewers and too many channels burn time fast. This piece looks at the real drag on approvals.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
   },
   {
     date: "Jan 2, 2026",
@@ -329,6 +344,8 @@ const blogSeed: BlogPostSeed[] = [
       "A straightforward review checklist to keep marketing projects moving from brief to approval without drift.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784714919/dashboard_5_rcqrfq.png",
   },
   {
     date: "Jan 2, 2026",
@@ -337,6 +354,8 @@ const blogSeed: BlogPostSeed[] = [
       "A quick diagnostic for spotting when inbox-based approvals are slowing your team more than helping.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812223/dashboard_7_f7al3i.png",
   },
   {
     date: "Oct 13, 2025",
@@ -345,6 +364,8 @@ const blogSeed: BlogPostSeed[] = [
       "Creative proofing is no longer static. Learn what changes when the work is interactive, motion-heavy, and live.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
   },
   {
     date: "Oct 13, 2025",
@@ -353,6 +374,8 @@ const blogSeed: BlogPostSeed[] = [
       "Version sprawl quietly creates rework, delay, and wasted budget. This article focuses on the operational cost.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784714919/dashboard_5_rcqrfq.png",
   },
   {
     date: "Dec 31, 2025",
@@ -361,6 +384,8 @@ const blogSeed: BlogPostSeed[] = [
       "A practical guide to feedback that designers and marketers can actually implement without another clarification thread.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812223/dashboard_7_f7al3i.png",
   },
   {
     date: "Dec 30, 2025",
@@ -370,6 +395,8 @@ const blogSeed: BlogPostSeed[] = [
       "Two similar-sounding steps create very different outcomes. This article clarifies where each belongs.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
   },
   {
     date: "Dec 30, 2025",
@@ -379,6 +406,8 @@ const blogSeed: BlogPostSeed[] = [
       "Brand risk often shows up in review. This piece explains how proofing helps catch compliance issues early.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784714919/dashboard_5_rcqrfq.png",
   },
   {
     date: "Dec 29, 2025",
@@ -387,6 +416,8 @@ const blogSeed: BlogPostSeed[] = [
       "Five concise process improvements that make approvals faster without introducing extra project overhead.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812223/dashboard_7_f7al3i.png",
   },
   {
     date: "Dec 29, 2025",
@@ -395,6 +426,8 @@ const blogSeed: BlogPostSeed[] = [
       "A tighter proofing loop, fewer revision passes, and better visibility can cut turnaround time dramatically.",
     coverImage:
       "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+    articleHeroImage:
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
   },
 ];
 
@@ -425,5 +458,6 @@ export const BLOG_POSTS = blogSeed.map((post) => {
     slug,
     content: article?.content ?? [],
     takeaways: article?.takeaways ?? [],
+    articleHeroImage: post.articleHeroImage ?? post.coverImage,
   };
 });

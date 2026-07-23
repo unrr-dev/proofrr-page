@@ -42,7 +42,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
                   src={post.coverImage}
                   alt={post.title}
                   fill
-                  className="object-contain"
+                  className="object-contain dark:invert dark:hue-rotate-180"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   priority={index < 3}
                 />
@@ -56,7 +56,7 @@ export function BlogGrid({ posts }: BlogGridProps) {
         <Reveal delay={0.1} className="mt-12">
           <button
             onClick={handleLoadMore}
-            className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-3 text-[15px] font-semibold text-[#3563f0] transition-colors hover:bg-slate-50 hover:border-slate-300 cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.03)]"
+            className="flex items-center gap-2 rounded-full border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-7 py-3 text-[15px] font-semibold text-[#3563f0] dark:text-[#3b82f6] transition-colors hover:bg-slate-50 dark:hover:bg-zinc-800/50 hover:border-slate-300 dark:hover:border-zinc-700 cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
           >
             Load More
             <ChevronDown className="h-4 w-4" />

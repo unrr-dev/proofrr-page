@@ -39,15 +39,15 @@ export default function PricingContent() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
 
   return (
-    <div className="pb-24 bg-[#f6f8fc] min-h-screen">
+    <div className="pb-24 bg-[#f6f8fc] dark:bg-zinc-950 min-h-screen transition-colors duration-300">
       <section className="container-shell pt-14 md:pt-20">
         {/* Title block */}
         <div className="text-center mx-auto max-w-3xl">
           <Reveal>
-            <h1 className="font-heading text-5xl font-semibold tracking-[-0.05em] text-[#101011] sm:text-6xl md:text-7.5xl">
+            <h1 className="font-heading text-5xl font-semibold tracking-[-0.05em] text-[#101011] dark:text-white sm:text-6xl md:text-7.5xl">
               Simple pricing, no surprises
             </h1>
-            <p className="mt-5 text-[17px] leading-relaxed text-[#606266] max-w-2xl mx-auto">
+            <p className="mt-5 text-[17px] leading-relaxed text-[#606266] dark:text-zinc-400 max-w-2xl mx-auto">
               Choose the plan that fits your team and streamline feedback, approvals, and creative
               collaboration.
             </p>
@@ -57,7 +57,7 @@ export default function PricingContent() {
         {/* Billing cycle toggle */}
         <div className="mt-10 flex justify-center">
           <Reveal delay={0.05}>
-            <div className="bg-white border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.015)] p-1.5 rounded-full inline-flex items-center">
+            <div className="bg-white border border-slate-100 dark:bg-zinc-900 dark:border-zinc-800 shadow-[0_8px_30px_rgba(0,0,0,0.015)] p-1.5 rounded-full inline-flex items-center">
               <button
                 type="button"
                 onClick={() => setBillingCycle("monthly")}
@@ -65,7 +65,7 @@ export default function PricingContent() {
                   "px-6 py-2 rounded-full font-semibold transition-all text-sm cursor-pointer select-none",
                   billingCycle === "monthly"
                     ? "bg-[#0069fc] text-white shadow-sm"
-                    : "text-[#606266] hover:text-slate-800"
+                    : "text-[#606266] hover:text-slate-800 dark:text-zinc-400 dark:hover:text-zinc-200"
                 )}
               >
                 Monthly
@@ -77,7 +77,7 @@ export default function PricingContent() {
                   "px-6 py-2 rounded-full font-semibold transition-all text-sm cursor-pointer select-none",
                   billingCycle === "yearly"
                     ? "bg-[#0069fc] text-white shadow-sm"
-                    : "text-[#606266] hover:text-slate-800"
+                    : "text-[#606266] hover:text-slate-800 dark:text-zinc-400 dark:hover:text-zinc-200"
                 )}
               >
                 Yearly
@@ -107,7 +107,7 @@ export default function PricingContent() {
                     alt={card.name}
                     width={380}
                     height={650}
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto object-contain dark:invert dark:hue-rotate-180"
                     priority={index < 3}
                   />
                 </div>

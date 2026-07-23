@@ -111,18 +111,18 @@ export function LandingPage() {
               alt="Vaishnavi Review Card"
               width={180}
               height={120}
-              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1"
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
             />
           </div>
 
           <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
-            <h1 className="mt-4 max-w-4xl text-[#101011] font-heading text-[3.5rem] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[5rem] md:text-[6.2rem] flex flex-col items-center">
+            <h1 className="mt-4 max-w-4xl text-[#101011] dark:text-white font-heading text-[3.5rem] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[5rem] md:text-[6.2rem] flex flex-col items-center">
               <span>Creative Reviews,</span>
-              <span className="font-serif-italic font-medium text-[#3563f0] italic leading-tight">Simplified.</span>
+              <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic leading-tight">Simplified.</span>
             </h1>
 
             <Reveal delay={0.3} duration={1} className="mt-6 max-w-2xl">
-              <p className="text-base leading-relaxed text-[#606266] sm:text-lg">
+              <p className="text-base leading-relaxed text-[#606266] dark:text-zinc-400 sm:text-lg">
                 Review, comment, approve, and deliver creative work faster. Bring
                 feedback, approvals, AI insights, files, and conversations into
                 one organized workspace.
@@ -141,7 +141,7 @@ export function LandingPage() {
               alt="Ananya Review Card"
               width={180}
               height={120}
-              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1"
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
             />
           </div>
 
@@ -151,7 +151,7 @@ export function LandingPage() {
               alt="Vinay Review Card"
               width={190}
               height={130}
-              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1"
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
             />
           </div>
 
@@ -171,7 +171,7 @@ export function LandingPage() {
           alt="Proofrr Benefits: Faster Feedback, Clear Approvals, AI-powered Summaries, Real-time Comments"
           width={1920}
           height={200}
-          className="w-full h-auto"
+          className="w-full h-auto dark:invert dark:hue-rotate-180 dark:brightness-[0.45] dark:contrast-[1.6]"
         />
       </section>
 
@@ -181,7 +181,7 @@ export function LandingPage() {
           alt="Why Proofrr? Everything you need to review, all in one place."
           width={1920}
           height={1000}
-          className="w-full h-auto"
+          className="w-full h-auto dark:invert dark:hue-rotate-180"
         />
       </section>
 
@@ -191,7 +191,7 @@ export function LandingPage() {
           alt="Simplify Your Workflow - Up and running in minutes"
           width={1920}
           height={600}
-          className="w-full h-auto"
+          className="w-full h-auto dark:invert dark:hue-rotate-180 dark:brightness-[0.45] dark:contrast-[1.6]"
         />
       </section>
 
@@ -207,7 +207,7 @@ export function LandingPage() {
             alt="Proofrr Integrations - Connect the tools your team already relies on"
             width={1200}
             height={550}
-            className="w-full h-auto"
+            className="w-full h-auto dark:invert dark:hue-rotate-180"
           />
         </Link>
       </section>
@@ -219,7 +219,7 @@ export function LandingPage() {
           alt="Teams that moved to Proofrr, love it."
           width={1920}
           height={960}
-          className="w-full h-auto"
+          className="w-full h-auto dark:invert dark:hue-rotate-180"
         />
       </section>
 

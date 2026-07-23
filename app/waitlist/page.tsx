@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function WaitlistPage() {
   return (
-    <div className="pb-24">
+    <div className="pb-0">
       <section className="container-shell pt-14 md:pt-20">
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
@@ -93,7 +93,7 @@ export default function WaitlistPage() {
         </div>
       </section>
 
-      <CtaSection className="pt-20 md:pt-24" />
+      <CtaSection className="pt-6 md:pt-8" />
     </div>
   );
 }
