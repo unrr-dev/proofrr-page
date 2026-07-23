@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Play, Star, MessageSquare, Sparkles, Zap, LayoutGrid, CloudUpload, CheckCircle } from "lucide-react";
@@ -30,12 +33,76 @@ import { WordReveal } from "@/components/word-reveal";
 
 
 
+const SHADED_CELLS = [
+  { r: 1, c: 3 },
+  { r: 1, c: 11 },
+  { r: 2, c: 6 },
+  { r: 3, c: 2 },
+  { r: 3, c: 9 },
+  { r: 4, c: 13 },
+  { r: 5, c: 5 },
+  { r: 5, c: 11 },
+  { r: 6, c: 1 },
+  { r: 7, c: 7 },
+  { r: 7, c: 12 },
+  { r: 8, c: 4 },
+  { r: 9, c: 10 },
+];
+
+function GridBackground() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="absolute inset-x-0 top-0 -z-10 h-[950px] overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.12)_0%,_transparent_60%)] dark:bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.22)_0%,_transparent_60%)]" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="absolute inset-x-0 top-0 -z-10 h-[950px] overflow-hidden pointer-events-none">
+      {/* Soft Radial Center Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.12)_0%,_transparent_60%)] dark:bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.22)_0%,_transparent_60%)]" />
+      
+      {/* Grid lines & Shaded cells */}
+      <div className="absolute inset-0 [mask-image:radial-gradient(circle_at_center,_black_30%,_transparent_75%)] opacity-90 flex justify-center">
+        <div 
+          className="w-[1520px] h-[950px] grid border-l border-t border-slate-300/40 dark:border-zinc-800/60"
+          style={{ gridTemplateColumns: "repeat(16, minmax(0, 1fr))", gridTemplateRows: "repeat(10, minmax(0, 1fr))" }}
+        >
+          {Array.from({ length: 160 }).map((_, index) => {
+            const row = Math.floor(index / 16);
+            const col = index % 16;
+            const isShaded = SHADED_CELLS.some((cell) => cell.r === row && cell.c === col);
+
+            return (
+              <div
+                key={index}
+                className={cn(
+                  "aspect-square border-r border-b border-slate-300/40 dark:border-zinc-800/60 transition-colors",
+                  isShaded ? "bg-slate-300/45 dark:bg-zinc-700/35" : ""
+                )}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function LandingPage() {
   return (
-    <div className="pb-0">
+    <div className="pb-0 relative overflow-hidden">
+      <GridBackground />
+
       <section className="container-shell relative pt-14 md:pt-20">
         <div className="relative px-4 pb-4 pt-6 sm:px-8 md:px-10 md:pb-6 md:pt-10">
-          <div className="proofrr-hero-plane absolute inset-x-6 bottom-0 h-60 origin-top [transform:perspective(100px)_rotateX(44deg)] opacity-50 sm:inset-x-10" />
 
           {/* Vaishnavi Card (Slanted) floating next to text */}
           <div className="absolute -right-8 xl:-right-20 top-8 z-30 hidden lg:block w-[140px] xl:w-[180px]">
