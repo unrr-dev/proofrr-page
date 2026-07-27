@@ -171,7 +171,7 @@ export function LandingPage() {
           alt="Proofrr Benefits: Faster Feedback, Clear Approvals, AI-powered Summaries, Real-time Comments"
           width={1920}
           height={200}
-          className="w-full h-auto dark:invert dark:hue-rotate-180 dark:brightness-[0.45] dark:contrast-[1.6]"
+          className="w-full h-auto dark:invert dark:hue-rotate-180"
         />
       </section>
 
@@ -186,12 +186,21 @@ export function LandingPage() {
       </section>
 
       <section className="relative z-10 flex justify-center pt-4 md:pt-6 w-full px-0 mx-0">
+        {/* Light Mode Steps Image */}
         <Image
           src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712807/Flow_of_user_1_kwfumg.png"
           alt="Simplify Your Workflow - Up and running in minutes"
           width={1920}
           height={600}
-          className="w-full h-auto dark:invert dark:hue-rotate-180 dark:brightness-[0.45] dark:contrast-[1.6]"
+          className="w-full h-auto dark:hidden"
+        />
+        {/* Dark Mode Steps Image */}
+        <Image
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784813419/Flow_of_user_2_dfyv56.png"
+          alt="Simplify Your Workflow - Up and running in minutes"
+          width={1920}
+          height={600}
+          className="w-full h-auto hidden dark:block"
         />
       </section>
 
