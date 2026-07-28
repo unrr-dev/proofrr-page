@@ -40,14 +40,14 @@ export default function PricingContent() {
 
   return (
     <div className="pb-24 bg-[#f6f8fc] dark:bg-zinc-950 min-h-screen transition-colors duration-300">
-      <section className="container-shell pt-14 md:pt-20">
+      <section className="container-shell pt-10 md:pt-20">
         {/* Title block */}
-        <div className="text-center mx-auto max-w-3xl">
+        <div className="text-center mx-auto max-w-3xl px-4">
           <Reveal>
-            <h1 className="font-heading text-5xl font-semibold tracking-[-0.05em] text-[#101011] dark:text-white sm:text-6xl md:text-7.5xl">
-              Simple pricing, no surprises
+            <h1 className="font-heading text-[2.2rem] sm:text-6xl md:text-7.5xl font-bold md:font-semibold tracking-tight md:tracking-[-0.05em] text-[#101011] dark:text-white">
+              Simple pricing,<br className="md:hidden" /> no surprises
             </h1>
-            <p className="mt-5 text-[17px] leading-relaxed text-[#606266] dark:text-zinc-400 max-w-2xl mx-auto">
+            <p className="mt-4 md:mt-5 text-[13px] md:text-[17px] leading-relaxed text-[#606266] dark:text-zinc-400 max-w-[280px] md:max-w-2xl mx-auto">
               Choose the plan that fits your team and streamline feedback, approvals, and creative
               collaboration.
             </p>
@@ -55,14 +55,14 @@ export default function PricingContent() {
         </div>
 
         {/* Billing cycle toggle */}
-        <div className="mt-10 flex justify-center">
+        <div className="mt-8 md:mt-10 flex justify-center px-4">
           <Reveal delay={0.05}>
-            <div className="bg-white border border-slate-100 dark:bg-zinc-900 dark:border-zinc-800 shadow-[0_8px_30px_rgba(0,0,0,0.015)] p-1.5 rounded-full inline-flex items-center">
+            <div className="bg-white border border-slate-100 dark:bg-zinc-900 dark:border-zinc-800 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] md:shadow-[0_8px_30px_rgba(0,0,0,0.015)] p-1 md:p-1.5 rounded-full inline-flex items-center w-full max-w-fit justify-between">
               <button
                 type="button"
                 onClick={() => setBillingCycle("monthly")}
                 className={cn(
-                  "px-6 py-2 rounded-full font-semibold transition-all text-sm cursor-pointer select-none",
+                  "px-4 md:px-6 py-1.5 md:py-2 rounded-full font-semibold transition-all text-[12px] md:text-sm cursor-pointer select-none",
                   billingCycle === "monthly"
                     ? "bg-[#0069fc] text-white shadow-sm"
                     : "text-[#606266] hover:text-slate-800 dark:text-zinc-400 dark:hover:text-zinc-200"
@@ -74,7 +74,7 @@ export default function PricingContent() {
                 type="button"
                 onClick={() => setBillingCycle("yearly")}
                 className={cn(
-                  "px-6 py-2 rounded-full font-semibold transition-all text-sm cursor-pointer select-none",
+                  "px-4 md:px-6 py-1.5 md:py-2 rounded-full font-semibold transition-all text-[12px] md:text-sm cursor-pointer select-none",
                   billingCycle === "yearly"
                     ? "bg-[#0069fc] text-white shadow-sm"
                     : "text-[#606266] hover:text-slate-800 dark:text-zinc-400 dark:hover:text-zinc-200"
@@ -82,24 +82,24 @@ export default function PricingContent() {
               >
                 Yearly
               </button>
-              <span className="text-[12px] font-semibold text-[#10b981] ml-3 pr-4">
+              <span className="text-[10px] md:text-[12px] font-semibold text-[#10b981] ml-2 md:ml-3 pr-3 md:pr-4 whitespace-nowrap">
                 Save up to 30%
               </span>
             </div>
           </Reveal>
         </div>
 
-        {/* Pricing Cards Grid of Flat Figma Exports */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 justify-center items-start max-w-[1680px] mx-auto px-4 md:px-6">
+        {/* Pricing Cards Grid / Horizontal Scroll on Mobile */}
+        <div className="mt-10 md:mt-16 flex md:grid overflow-x-auto snap-x snap-mandatory md:overflow-visible flex-nowrap md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5 justify-start md:justify-center items-center md:items-start max-w-[1680px] mx-auto px-6 md:px-6 pb-12 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {CARD_ASSETS.map((card, index) => {
             const isPlusPlan = card.name === "Plus Plan";
 
             return (
-              <Reveal key={card.name} delay={index * 0.02} className="flex justify-center">
+              <Reveal key={card.name} delay={index * 0.02} className="flex justify-center shrink-0 snap-center w-[260px] md:w-full">
                 <div
                   className={cn(
-                    "w-full transition-all duration-300 hover:-translate-y-1 rounded-[16px] overflow-hidden",
-                    isPlusPlan ? "md:scale-[1.03]" : ""
+                    "w-full transition-all duration-300 hover:-translate-y-1 rounded-[1.25rem] md:rounded-[16px] overflow-hidden",
+                    isPlusPlan ? "scale-[1.02] md:scale-[1.03]" : ""
                   )}
                 >
                   <Image

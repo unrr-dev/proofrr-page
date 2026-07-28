@@ -27,6 +27,7 @@ const isActive = (pathname: string, href: string) =>
 export function SiteHeader() {
   const pathname = usePathname();
   const [isDark, setIsDark] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -165,7 +166,7 @@ export function SiteHeader() {
               </button>
             </div>
 
-            <Sheet>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger
                 aria-label="Open menu"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d7e3ff] bg-white/90 text-[#101011] shadow-[0_10px_24px_rgba(16,16,17,0.08)] dark:border-zinc-800 dark:bg-zinc-950/90 dark:text-white dark:shadow-[0_10px_24px_rgba(0,0,0,0.4)]"
@@ -196,6 +197,7 @@ export function SiteHeader() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
                         "rounded-2xl border px-4 py-3 text-base font-medium transition-colors",
                         isActive(pathname, item.href)
@@ -212,6 +214,7 @@ export function SiteHeader() {
                     href={PLATFORM_URL}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="flex h-12 w-full items-center justify-center rounded-[10px] border border-[#d7e3ff] text-[15px] font-semibold text-[#3563f0] hover:bg-[#f0f5ff] dark:border-zinc-800 dark:text-[#3b82f6] dark:hover:bg-zinc-900"
                   >
                     Sign In
@@ -220,6 +223,7 @@ export function SiteHeader() {
                     href={PLATFORM_URL}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
                       buttonVariants({ size: "lg" }),
                       "proofrr-button-shadow flex h-12 w-full items-center justify-center gap-2 rounded-[10px] border-0 bg-[#3563f0] text-[15px] font-semibold text-white hover:brightness-105 dark:bg-[#3563f0]"

@@ -24,7 +24,14 @@ export function CtaSection({ className }: CtaSectionProps) {
           alt="Take your creative workflow to the next level! Start Free"
           width={1920}
           height={600}
-          className="w-full h-auto dark:invert dark:hue-rotate-180"
+          className="w-full h-auto dark:invert dark:hue-rotate-180 hidden md:block"
+        />
+        <Image
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1785228731/Frame_1000002120_bmm9xq.png"
+          alt="Take your creative workflow to the next level! Start Free"
+          width={800}
+          height={800}
+          className="w-full h-auto dark:invert dark:hue-rotate-180 md:hidden px-4"
         />
       </Link>
     </section>
