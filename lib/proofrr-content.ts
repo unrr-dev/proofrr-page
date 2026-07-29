@@ -273,9 +273,9 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "The approval came in. You exhaled. Then, three days later: 'Actually, can we just tweak one more thing?' Here's why it keeps happening.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317987/dashboard_8_gphjmo.png",
     articleHeroImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317987/dashboard_8_gphjmo.png",
   },
   {
     date: "June 25, 2026",
@@ -283,9 +283,9 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Why review chaos spreads when approval roles are fuzzy, and how stronger boundaries tighten feedback loops.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317993/dashboard_9_gh5pvm.png",
     articleHeroImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784714919/dashboard_5_rcqrfq.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317993/dashboard_9_gh5pvm.png",
   },
   {
     date: "July 2, 2026",
@@ -293,9 +293,9 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "What modern feedback workflows look like when email stops being the default operating system.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317998/dashboard_10_joagc4.png",
     articleHeroImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812223/dashboard_7_f7al3i.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317998/dashboard_10_joagc4.png",
   },
   {
     date: "June 25, 2026",
@@ -303,9 +303,9 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "Why review chaos spreads when approval roles are fuzzy, and how stronger boundaries tighten feedback loops.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713487/Frame_15_1_fv0nij.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317993/dashboard_9_gh5pvm.png",
     articleHeroImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784714919/dashboard_5_rcqrfq.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317993/dashboard_9_gh5pvm.png",
   },
   {
     date: "July 2, 2026",
@@ -313,9 +313,9 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "What modern feedback workflows look like when email stops being the default operating system.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713509/Frame_16_1_bjf5fd.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317998/dashboard_10_joagc4.png",
     articleHeroImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812223/dashboard_7_f7al3i.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317998/dashboard_10_joagc4.png",
   },
   {
     date: "June 20, 2026",
@@ -323,9 +323,9 @@ const blogSeed: BlogPostSeed[] = [
     excerpt:
       "The approval came in. You exhaled. Then, three days later: 'Actually, can we just tweak one more thing?' Here's why it keeps happening.",
     coverImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784713470/Frame_17_w8o0vs.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317987/dashboard_8_gphjmo.png",
     articleHeroImage:
-      "https://res.cloudinary.com/djxnyqaya/image/upload/v1784812208/dashboard_6_votgeh.png",
+      "https://res.cloudinary.com/djxnyqaya/image/upload/v1785317987/dashboard_8_gphjmo.png",
   },
   {
     date: "Jan 3, 2026",

@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${bodyFont.variable} ${headingFont.variable} ${italicSerifFont.variable} antialiased`}>
       <body
         suppressHydrationWarning
-        className="min-h-screen bg-background text-foreground"
+        className="min-h-screen bg-background text-foreground font-sans"
       >
         <SiteHeader />
         <main>{children}</main>
