@@ -49,7 +49,7 @@ function renderBlock(block: ContentBlock, index: number) {
       return (
         <h3
           key={index}
-          className="font-heading text-lg sm:text-xl font-bold text-[#111827] dark:text-white mt-6 mb-2"
+          className="font-heading text-lg sm:text-xl font-bold text-[#111827] dark:text-white mt-6 mb-2 leading-snug"
         >
           {block.text}
         </h3>
@@ -62,21 +62,32 @@ function renderBlock(block: ContentBlock, index: number) {
       );
     case "list":
       return (
-        <div
-          key={index}
-          className="my-6 rounded-[20px] bg-[#eef4ff] dark:bg-blue-950/30 p-4 sm:p-5 border border-blue-100/70 dark:border-blue-900/40 space-y-3.5"
-        >
+        <div key={index} className="my-5 space-y-4">
           {block.items.map((item, i) => {
-            const parts = item.split(":");
-            const hasPrefix = parts.length > 1;
+            let prefix = "";
+            let body = item;
+
+            if (item.includes(":")) {
+              const idx = item.indexOf(":");
+              prefix = item.substring(0, idx + 1);
+              body = item.substring(idx + 1);
+            } else if (item.includes(" — ")) {
+              const idx = item.indexOf(" — ");
+              prefix = item.substring(0, idx + 3);
+              body = item.substring(idx + 3);
+            }
+
             return (
-              <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm leading-relaxed text-[#374151] dark:text-zinc-300">
+              <div
+                key={i}
+                className="rounded-[18px] bg-[#edf2fd] dark:bg-blue-950/30 p-4 sm:p-5 border border-blue-100/70 dark:border-blue-900/40 flex items-start gap-3 text-xs sm:text-sm leading-relaxed text-[#374151] dark:text-zinc-300 shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
+              >
                 <span className="h-1.5 w-1.5 rounded-full bg-[#111827] dark:bg-white shrink-0 mt-2" />
                 <div>
-                  {hasPrefix ? (
+                  {prefix ? (
                     <>
-                      <strong className="font-bold text-[#111827] dark:text-white">{parts[0]}:</strong>
-                      {parts.slice(1).join(":")}
+                      <strong className="font-bold text-[#111827] dark:text-white">{prefix}</strong>
+                      {body}
                     </>
                   ) : (
                     item

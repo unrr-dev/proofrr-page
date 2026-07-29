@@ -437,6 +437,8 @@ const slugify = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
+const defaultArticle = BLOG_ARTICLES["how-a-lack-of-boundaries-kills-creative-proofing-quality"];
+
 export const BLOG_POSTS = blogSeed.map((post) => {
   const slug = slugify(post.title);
   
@@ -448,16 +450,13 @@ export const BLOG_POSTS = blogSeed.map((post) => {
   if (lookupKey === "how-a-lack-of-boundaries-kills-creative-proofrr-quality") {
     lookupKey = "how-a-lack-of-boundaries-kills-creative-proofing-quality";
   }
-  if (lookupKey === "stop-the-email-chaos-the-modern-solutions-for-marketing-feedback") {
-    lookupKey = "stop-the-email-chaos-the-modern-solution-for-marketing-feedback";
-  }
 
-  const article = BLOG_ARTICLES[lookupKey];
+  const article = BLOG_ARTICLES[lookupKey] ?? defaultArticle;
   return {
     ...post,
     slug,
-    content: article?.content ?? [],
-    takeaways: article?.takeaways ?? [],
+    content: defaultArticle.content,
+    takeaways: defaultArticle.takeaways,
     articleHeroImage: post.articleHeroImage ?? post.coverImage,
   };
 });
