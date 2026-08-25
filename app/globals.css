@@ -120,10 +120,12 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
     @apply font-sans;
   }
 
   body {
+    overflow-x: clip;
     @apply bg-background text-foreground;
   }
 

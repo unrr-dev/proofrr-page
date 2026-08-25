@@ -98,19 +98,19 @@ function GridBackground() {
 
 export function LandingPage() {
   return (
-    <div className="pb-0 relative overflow-hidden">
+    <div className="pb-0 relative overflow-x-clip">
       <GridBackground />
 
       <section className="container-shell relative pt-14 md:pt-20">
         <div className="relative px-4 pb-4 pt-6 sm:px-8 md:px-10 md:pb-6 md:pt-10">
 
           {/* Vaishnavi Card (Slanted) floating next to text */}
-          <div className="absolute -right-8 xl:-right-20 top-8 z-30 hidden lg:block w-[140px] xl:w-[180px]">
+          <div className="absolute -right-6 sm:-right-12 md:-right-20 lg:-right-28 xl:-right-36 2xl:-right-48 top-1 sm:top-2 md:top-4 lg:top-6 z-30 hidden md:block w-[140px] sm:w-[165px] lg:w-[195px] xl:w-[220px]">
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298328/Testimonial_Card_4_r5l7ay.png"
               alt="Vaishnavi Review Card"
-              width={180}
-              height={120}
+              width={220}
+              height={145}
               className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
             />
           </div>
@@ -135,22 +135,22 @@ export function LandingPage() {
       <section className="container-shell pt-10 md:pt-14 relative z-20">
         <div className="relative mx-auto w-full max-w-[920px]">
           {/* Floating Cards (Figma Mockup Images) */}
-          <div className="absolute -left-20 top-[45%] -translate-y-1/2 z-30 hidden xl:block w-[180px]">
+          <div className="absolute -left-12 sm:-left-20 md:-left-28 lg:-left-40 xl:-left-52 2xl:-left-64 top-[45%] -translate-y-1/2 z-30 hidden md:block w-[150px] sm:w-[180px] lg:w-[210px] xl:w-[240px]">
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298354/Testimonial_Card_2_x5ppqh.png"
               alt="Ananya Review Card"
-              width={180}
-              height={120}
+              width={240}
+              height={160}
               className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
             />
           </div>
 
-          <div className="absolute -right-20 top-[55%] -translate-y-1/2 z-30 hidden xl:block w-[190px]">
+          <div className="absolute -right-12 sm:-right-20 md:-right-28 lg:-right-40 xl:-right-52 2xl:-right-64 top-[55%] -translate-y-1/2 z-30 hidden md:block w-[155px] sm:w-[185px] lg:w-[215px] xl:w-[245px]">
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298333/Testimonial_Card_3_drznbn.png"
               alt="Vinay Review Card"
-              width={190}
-              height={130}
+              width={245}
+              height={165}
               className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
             />
           </div>
