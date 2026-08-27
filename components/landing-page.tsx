@@ -145,7 +145,7 @@ export function LandingPage() {
             />
           </div>
 
-          <div className="absolute -right-12 sm:-right-20 md:-right-28 lg:-right-40 xl:-right-52 2xl:-right-64 top-[55%] -translate-y-1/2 z-30 hidden md:block w-[155px] sm:w-[185px] lg:w-[215px] xl:w-[245px]">
+          <div className="absolute -right-12 sm:-right-20 md:-right-[168px] lg:-right-[204px] xl:-right-[235px] 2xl:-right-[260px] top-[55%] -translate-y-1/2 z-0 hidden md:block w-[155px] sm:w-[185px] lg:w-[215px] xl:w-[245px]">
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298333/Testimonial_Card_3_drznbn.png"
               alt="Vinay Review Card"
@@ -155,7 +155,7 @@ export function LandingPage() {
             />
           </div>
 
-          <Reveal className="overflow-hidden rounded-[2.2rem] border-[6px] border-[#3563f0] bg-slate-900 shadow-[0_30px_70px_rgba(53,99,240,0.15)]">
+          <Reveal className="relative z-10 overflow-hidden rounded-[2.2rem] border-[6px] border-[#3563f0] bg-slate-900 shadow-[0_30px_70px_rgba(53,99,240,0.15)]">
             <ProofrrDemoVideo
               src={HERO_DEMO_VIDEO_URL}
               poster="/proofrr/dashboard.png"
