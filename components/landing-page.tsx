@@ -135,7 +135,7 @@ export function LandingPage() {
       <section className="container-shell pt-10 md:pt-14 relative z-20">
         <div className="relative mx-auto w-full max-w-[920px]">
           {/* Floating Cards (Figma Mockup Images) */}
-          <div className="absolute -left-12 sm:-left-20 md:-left-28 lg:-left-40 xl:-left-52 2xl:-left-64 top-[45%] -translate-y-1/2 z-30 hidden md:block w-[150px] sm:w-[180px] lg:w-[210px] xl:w-[240px]">
+          <div className="absolute -left-12 sm:-left-20 md:-left-28 lg:-left-40 xl:-left-52 2xl:-left-64 top-[1%] -translate-y-1/2 z-0 hidden md:block w-[150px] sm:w-[180px] lg:w-[210px] xl:w-[240px]">
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298354/Testimonial_Card_2_x5ppqh.png"
               alt="Ananya Review Card"
@@ -145,7 +145,7 @@ export function LandingPage() {
             />
           </div>
 
-          <div className="absolute -right-12 sm:-right-20 md:-right-[168px] lg:-right-[204px] xl:-right-[235px] 2xl:-right-[260px] top-[55%] -translate-y-1/2 z-0 hidden md:block w-[155px] sm:w-[185px] lg:w-[215px] xl:w-[245px]">
+          <div className="absolute -right-12 sm:-right-20 md:-right-[168px] lg:-right-[204px] xl:-right-[235px] 2xl:-right-[260px] top-[15%] -translate-y-1/2 z-0 hidden md:block w-[155px] sm:w-[185px] lg:w-[215px] xl:w-[245px]">
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298333/Testimonial_Card_3_drznbn.png"
               alt="Vinay Review Card"
