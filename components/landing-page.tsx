@@ -59,7 +59,7 @@ function GridBackground() {
   if (!mounted) {
     return (
       <div className="absolute inset-x-0 top-0 -z-10 h-[950px] overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.12)_0%,_transparent_60%)] dark:bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.22)_0%,_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.08)_0%,_transparent_50%)] dark:bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.06)_0%,_transparent_50%)]" />
       </div>
     );
   }
@@ -67,7 +67,7 @@ function GridBackground() {
   return (
     <div className="absolute inset-x-0 top-0 -z-10 h-[950px] overflow-hidden pointer-events-none">
       {/* Soft Radial Center Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.12)_0%,_transparent_60%)] dark:bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.22)_0%,_transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.08)_0%,_transparent_50%)] dark:bg-[radial-gradient(circle_at_top,_rgba(53,99,240,0.06)_0%,_transparent_50%)]" />
       
       {/* Grid lines & Shaded cells */}
       <div className="absolute inset-0 [mask-image:radial-gradient(circle_at_center,_black_30%,_transparent_75%)] opacity-90 flex justify-center">
@@ -106,12 +106,21 @@ export function LandingPage() {
 
           {/* Vaishnavi Card (Slanted) floating next to text */}
           <div className="absolute -right-6 sm:-right-12 md:-right-20 lg:-right-28 xl:-right-36 2xl:-right-48 top-1 sm:top-2 md:top-4 lg:top-6 z-30 hidden md:block w-[140px] sm:w-[165px] lg:w-[195px] xl:w-[220px]">
+            {/* Light Mode Card */}
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298328/Testimonial_Card_4_r5l7ay.png"
               alt="Vaishnavi Review Card"
               width={220}
               height={145}
-              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:hidden"
+            />
+            {/* Dark Mode Card */}
+            <Image
+              src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788171013/Testimonial_Card_5_dvdvgq.png"
+              alt="Vaishnavi Review Card"
+              width={220}
+              height={145}
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 hidden dark:block"
             />
           </div>
 
@@ -136,22 +145,40 @@ export function LandingPage() {
         <div className="relative mx-auto w-full max-w-[920px]">
           {/* Floating Cards (Figma Mockup Images) */}
           <div className="absolute -left-12 sm:-left-20 md:-left-28 lg:-left-40 xl:-left-52 2xl:-left-64 top-[1%] -translate-y-1/2 z-0 hidden md:block w-[150px] sm:w-[180px] lg:w-[210px] xl:w-[240px]">
+            {/* Light Mode Card */}
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298354/Testimonial_Card_2_x5ppqh.png"
               alt="Ananya Review Card"
               width={240}
               height={160}
-              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:hidden"
+            />
+            {/* Dark Mode Card */}
+            <Image
+              src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788171117/Testimonial_Card_6_vb2vef.png"
+              alt="Ananya Review Card"
+              width={240}
+              height={160}
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 hidden dark:block"
             />
           </div>
 
           <div className="absolute -right-12 sm:-right-20 md:-right-[168px] lg:-right-[204px] xl:-right-[235px] 2xl:-right-[260px] top-[15%] -translate-y-1/2 z-0 hidden md:block w-[155px] sm:w-[185px] lg:w-[215px] xl:w-[245px]">
+            {/* Light Mode Card */}
             <Image
               src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784298333/Testimonial_Card_3_drznbn.png"
               alt="Vinay Review Card"
               width={245}
               height={165}
-              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:invert dark:hue-rotate-180"
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 dark:hidden"
+            />
+            {/* Dark Mode Card */}
+            <Image
+              src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788171123/Testimonial_Card_7_lfkw2o.png"
+              alt="Vinay Review Card"
+              width={245}
+              height={165}
+              className="w-full h-auto transition-transform duration-300 hover:-translate-y-1 hidden dark:block"
             />
           </div>
 

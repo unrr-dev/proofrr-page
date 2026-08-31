@@ -200,7 +200,7 @@
 
   .proofrr-dark-glow {
     background:
-      radial-gradient(circle at top center, rgba(53, 99, 240, 0.18), transparent 26%),
+      radial-gradient(circle at top center, rgba(53, 99, 240, 0.06), transparent 26%),
       #101011;
   }
 
