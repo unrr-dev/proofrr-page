@@ -238,12 +238,21 @@ export function LandingPage() {
           rel="noreferrer"
           className="w-full max-w-[1200px] block transition-transform duration-300 hover:scale-[1.005]"
         >
+          {/* Light Mode Integrations */}
           <Image
             src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712581/Frame_101_1_tjwazv.png"
             alt="Proofrr Integrations - Connect the tools your team already relies on"
             width={1200}
             height={550}
-            className="w-full h-auto dark:invert dark:hue-rotate-180"
+            className="w-full h-auto dark:hidden"
+          />
+          {/* Dark Mode Integrations */}
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788171936/Frame_101_2_ct0ihn.png"
+            alt="Proofrr Integrations - Connect the tools your team already relies on"
+            width={1200}
+            height={550}
+            className="w-full h-auto hidden dark:block"
           />
         </Link>
       </section>
