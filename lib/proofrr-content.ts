@@ -3,7 +3,7 @@ import { BLOG_ARTICLES } from "./blog-content";
 export const PLATFORM_URL = "https://platform.proofrr.com/";
 export const INTEGRATIONS_URL = "https://platform.proofrr.com/";
 export const HERO_DEMO_VIDEO_URL =
-  "https://res.cloudinary.com/djxnyqaya/video/upload/v1776800024/intovideo_c9efjh.mp4";
+  "https://res.cloudinary.com/djxnyqaya/video/upload/v1788170151/proofrr_2026_kw1wr4.mp4";
 
 export const NAV_LINKS = [
   { href: "/about", label: "About" },
