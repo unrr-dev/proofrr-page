@@ -20,157 +20,18 @@ function MobileCta() {
         target="_blank"
         rel="noreferrer"
         aria-label="Take your creative workflow to the next level - Start Free"
-        className="group relative block aspect-[405/460] w-full overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#ffffff_0%,#fbfdff_55%,#f4f8ff_100%)] dark:bg-[linear-gradient(180deg,#0b0b0e_0%,#0d1016_55%,#101728_100%)] shadow-sm"
+        className="group relative block aspect-[405/520] w-full overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#ffffff_0%,#fbfdff_55%,#f4f8ff_100%)] dark:bg-[linear-gradient(180deg,#0b0b0e_0%,#0d1016_55%,#101728_100%)] shadow-sm"
       >
-        {/* Flow lines, nodes and decorations */}
-        <svg
-          viewBox="0 0 405 520"
-          fill="none"
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full text-[#3563f0]"
-        >
-          {/* Bottom Right Wave Background Shapes */}
-          <path
-            d="M410 330C390 350 383 372 392 394C400 412 396 428 386 444C376 460 379 484 399 497L410 520L410 330Z"
-            className="fill-[#e8f0fd] dark:fill-[#141d33]"
-          />
-          <path
-            d="M-8 62C14 50 30 28 40 -6"
-            className="stroke-[#d8e4f8] dark:stroke-[#1d2740]"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M-6 58C8 50 20 42 32 30"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <path
-            d="M39 38C41 50 44 60 46 72"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <circle cx="39" cy="25" r="7.5" fill="currentColor" />
-          <path d="M33.4 29.5L39 39.5L44.6 29.5Z" fill="currentColor" />
-
-          {/* Top Right Flow Lines & Nodes */}
-          <path
-            d="M307 56C309 74 315 98 324 114"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <path
-            d="M324 114C342 121 352 108 366 99C378 91 394 92 410 97"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <path
-            d="M324 114C321 138 313 158 302 176"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <circle cx="324" cy="114" r="4.5" fill="currentColor" />
-          <circle
-            cx="366"
-            cy="99"
-            r="7"
-            className="fill-white dark:fill-zinc-900"
-            stroke="#f5b719"
-            strokeWidth="2.4"
-          />
-          <circle cx="366" cy="99" r="2.3" fill="#f5b719" />
-
-          {/* Bottom Left Flow Line & Selector Box */}
-          <path
-            d="M64 410C72 418 79 424 87 429C120 444 152 454 172 466C180 471 185 475 188 478"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <circle cx="87" cy="429" r="4.5" fill="currentColor" />
-
-          <rect
-            x="200"
-            y="415"
-            width="90"
-            height="70"
-            rx="6"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            strokeDasharray="5 4"
-          />
-          <path
-            d="M245 416 L245 445"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            strokeDasharray="4 3.5"
-          />
-          <circle cx="245" cy="450" r="6" fill="currentColor" />
-        </svg>
-
-        {/* Cursor arrow below the pin */}
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          className="absolute left-[10.8%] top-[12.2%] h-5 w-5 fill-[#3563f0]"
-        >
-          <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" />
-        </svg>
-
-        {/* Comment card 1, top-left */}
-        <div className="absolute left-[8%] top-[14%] flex items-center gap-2 rounded-[10px] border border-[#3563f0] bg-[#f4f8ff] px-3 py-2 shadow-[0_4px_16px_rgba(53,99,240,0.08)] dark:border-blue-500/50 dark:bg-[#101930]">
-          <span className="flex h-6.5 w-6.5 shrink-0 items-center justify-center rounded-full bg-[#3563f0] text-[11px] font-bold text-white">
-            A
-          </span>
-          <p className="whitespace-nowrap text-[11px] leading-[1.3] text-black dark:text-white font-semibold">
-            <span className="font-bold text-black dark:text-white">
-              Looks great!
-            </span>
-            <br />
-            <span className="font-semibold text-black dark:text-white">
-              Can we try a brighter tone here?
-            </span>
-          </p>
-        </div>
-
-        {/* Approved badge, top-right */}
-        <div className="absolute right-[12%] top-[8%] flex items-center gap-2.5 rounded-[10px] border border-[#3563f0] bg-[#f4f8ff] px-4 py-2.5 shadow-[0_4px_16px_rgba(53,99,240,0.08)] dark:border-white/10 dark:bg-[#101930]">
-          <span className="flex h-4.5 w-4.5 items-center justify-center rounded-full bg-[#f5b719]">
-            <Check className="h-3 w-3 text-white" strokeWidth={3.5} />
-          </span>
-          <span className="text-[11px] font-bold text-black dark:text-white">
-            Approved
-          </span>
-        </div>
-
-        {/* Edit tile, bottom-left */}
-        <span className="absolute left-[10%] top-[88%] flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#3563f0] bg-[#eef4ff] dark:border-white/10 dark:bg-[#1a2440]">
-          <Pencil className="h-4.5 w-4.5 text-[#3563f0]" />
-        </span>
-
-        {/* Dot matrix, bottom-left */}
-        <span className="absolute left-[4.5%] top-[102%] h-14 w-14 bg-[radial-gradient(circle,#c9d9f5_22%,transparent_24%)] bg-[length:10px_10px] dark:bg-[radial-gradient(circle,#2b3856_22%,transparent_24%)]" />
-
-        {/* Comment card 2, bottom-right */}
-        <div className="absolute right-[5%] top-[88%] flex items-center gap-2 rounded-[10px] border border-[#3563f0] bg-[#f4f8ff] px-3 py-2 shadow-[0_4px_16px_rgba(53,99,240,0.08)] dark:border-blue-500/50 dark:bg-[#101930]">
-          <span className="flex h-6.5 w-6.5 shrink-0 items-center justify-center rounded-full bg-[#3563f0] text-[11px] font-bold text-white">
-            R
-          </span>
-          <p className="whitespace-nowrap text-[11px] leading-[1.3] text-black dark:text-white font-semibold">
-            Let&apos;s update the headline
-            <br />
-            and make it bolder.
-          </p>
-        </div>
+        {/* Mobile Frame Background Image */}
+        <img
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788254615/ChatGPT_Image_Jul_16_2026_01_43_29_PM_1_pl6zgz.png"
+          alt="Mobile CTA Background Frame"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
 
         {/* Center Copy block */}
-        <div className="absolute inset-x-0 top-[22%] flex flex-col items-center px-6 text-center">
-          <h2 className="font-heading text-2xl font-semibold leading-[1.18] tracking-tight text-[#101011] dark:text-white">
+        <div className="absolute inset-x-0 top-[27%] flex flex-col items-center px-6 text-center z-10">
+          <h2 className="font-heading text-2xl font-bold leading-[1.18] tracking-tight text-[#101011] dark:text-white">
             Take your creative
             <br />
             workflow to{" "}
@@ -206,9 +67,9 @@ function MobileCta() {
             marketing teams.
           </p>
 
-          <span className="proofrr-button-shadow mt-6 inline-flex h-13 items-center gap-2.5 rounded-full bg-[#3563f0] px-7 text-sm font-semibold text-white transition-transform duration-300 group-hover:-translate-y-0.5">
+          <span className="proofrr-button-shadow mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-[#3563f0] px-6 text-sm font-semibold text-white transition-transform duration-300 group-hover:-translate-y-0.5">
             Start Free
-            <ArrowRight className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>
         </div>
       </Link>
