@@ -163,7 +163,7 @@ export function LandingPage() {
             </h1>
 
             <Reveal delay={0.3} duration={1} className="mt-5 max-w-3xl mx-auto">
-              <p className="text-sm xs:text-base leading-relaxed text-[#606266] dark:text-zinc-400 sm:text-lg text-center">
+              <p className="text-sm xs:text-base leading-relaxed text-[#8a8c94] dark:text-zinc-400/90 sm:text-lg text-center font-normal">
                 Review, comment, approve, and deliver creative work faster. Bring<br />
                 feedback, approvals, AI insights, files, and conversations into one<br />
                 organized workspace.
@@ -221,9 +221,9 @@ export function LandingPage() {
       </section>
 
       {/* Core Benefits Row */}
-      <section className="w-full py-8 md:py-12 relative z-10 flex justify-center px-0 mx-0">
+      <section className="w-full py-4 md:py-8 relative z-10 flex justify-center px-0 mx-0">
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712373/Frame_4_1_cqnvt0.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353104/Frame_4_2_mqrfd3.png"
           alt="Proofrr Benefits: Faster Feedback, Clear Approvals, AI-powered Summaries, Real-time Comments"
           width={1920}
           height={200}
