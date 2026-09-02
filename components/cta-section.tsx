@@ -14,24 +14,46 @@ type CtaSectionProps = {
  */
 function MobileCta() {
   return (
-    <div className="md:hidden w-full px-4">
+    <div className="md:hidden w-full px-4 my-4">
       <Link
         href={PLATFORM_URL}
         target="_blank"
         rel="noreferrer"
         aria-label="Take your creative workflow to the next level - Start Free"
-        className="group relative block aspect-[405/520] w-full overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#ffffff_0%,#fbfdff_55%,#f4f8ff_100%)] dark:bg-[linear-gradient(180deg,#0b0b0e_0%,#0d1016_55%,#101728_100%)] shadow-sm"
+        className="group relative block w-full overflow-hidden rounded-[24px] border border-slate-200/80 dark:border-zinc-800/80 bg-[linear-gradient(180deg,#ffffff_0%,#fbfdff_50%,#f4f8ff_100%)] dark:bg-[linear-gradient(180deg,#090b10_0%,#0c1018_50%,#101726_100%)] px-5 py-9 shadow-sm text-center transition-all duration-300"
       >
-        {/* Mobile Frame Background Image */}
-        <img
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788254615/ChatGPT_Image_Jul_16_2026_01_43_29_PM_1_pl6zgz.png"
-          alt="Mobile CTA Background Frame"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        {/* Soft Radial Glow */}
+        <div className="pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_center,rgba(53,99,240,0.12),transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(53,99,240,0.18),transparent_70%)]" />
+        <div className="pointer-events-none absolute -right-10 -bottom-10 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_center,rgba(53,99,240,0.1),transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(53,99,240,0.15),transparent_70%)]" />
 
-        {/* Center Copy block */}
-        <div className="absolute inset-x-0 top-[27%] flex flex-col items-center px-6 text-center z-10">
-          <h2 className="font-heading text-2xl font-bold leading-[1.18] tracking-tight text-[#101011] dark:text-white">
+        {/* Vector Curves Background */}
+        <svg
+          viewBox="0 0 400 350"
+          fill="none"
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-35 dark:opacity-25"
+        >
+          <path
+            d="M -20 80 C 60 80, 100 240, 220 240 C 300 240, 340 140, 420 140"
+            stroke="#3563f0"
+            strokeWidth="1.5"
+            strokeDasharray="4 4"
+          />
+          <circle cx="60" cy="80" r="4" fill="#3563f0" />
+          <circle cx="220" cy="240" r="4" fill="#3563f0" />
+        </svg>
+
+        {/* Top Floating Badge "Approved" */}
+        <div className="relative z-10 mx-auto mb-3.5 inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-1 text-[11px] font-semibold text-slate-700 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/90 dark:text-zinc-200">
+          <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-amber-400 text-white">
+            <Check className="h-2.5 w-2.5 stroke-[3]" />
+          </span>
+          <span>Approved</span>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-sm">
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold leading-[1.18] tracking-tight text-[#101011] dark:text-white">
             Take your creative
             <br />
             workflow to{" "}
@@ -59,15 +81,11 @@ function MobileCta() {
             </span>
           </h2>
 
-          <p className="mt-4 max-w-[340px] text-sm sm:text-base leading-relaxed text-[#9ca3af] dark:text-zinc-400 font-normal">
-            Revolutionise your workflow with the most effective
-            <br />
-            collaboration tool. Perfect for freelancers, agencies and
-            <br />
-            marketing teams.
+          <p className="mt-3.5 text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-zinc-400 font-normal">
+            Revolutionise your workflow with the most effective collaboration tool. Perfect for freelancers, agencies and marketing teams.
           </p>
 
-          <span className="proofrr-button-shadow mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-[#3563f0] px-6 text-sm font-semibold text-white transition-transform duration-300 group-hover:-translate-y-0.5">
+          <span className="proofrr-button-shadow mt-5 inline-flex h-10.5 items-center gap-2 rounded-full bg-[#3563f0] px-6 text-xs sm:text-sm font-semibold text-white transition-transform duration-300 group-hover:-translate-y-0.5">
             Start Free
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>
