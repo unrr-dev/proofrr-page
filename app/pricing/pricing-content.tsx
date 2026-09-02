@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Leaf, Zap, Star, Layers, ShieldCheck, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
@@ -123,6 +123,44 @@ const PLAN_TIERS: PlanTier[] = [
 
 export default function PricingContent() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const children = container.children;
+    if (!children.length) return;
+
+    const containerLeft = container.getBoundingClientRect().left;
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    Array.from(children).forEach((child, index) => {
+      const childLeft = child.getBoundingClientRect().left;
+      const distance = Math.abs(childLeft - containerLeft);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    setActiveCardIndex(closestIndex);
+  };
+
+  const scrollToCard = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const targetCard = container.children[index] as HTMLElement;
+    if (targetCard) {
+      targetCard.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+      setActiveCardIndex(index);
+    }
+  };
 
   return (
     <div className="pb-24 bg-[#f6f8fc] dark:bg-zinc-950 min-h-screen transition-colors duration-300">
@@ -182,8 +220,12 @@ export default function PricingContent() {
           </Reveal>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6 items-start max-w-[1380px] mx-auto px-4 md:px-6">
+        {/* Pricing Cards Horizontal Slider on Mobile / Grid on Desktop */}
+        <div
+          ref={scrollContainerRef}
+          onScroll={handleScroll}
+          className="mt-8 md:mt-16 flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-4 lg:gap-6 items-stretch md:items-start max-w-[1380px] mx-auto px-4 md:px-6 pt-5 pb-6 scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid-cols-3 lg:grid-cols-5"
+        >
           {PLAN_TIERS.map((tier, index) => {
             const Icon = tier.icon;
             const isPlus = tier.id === "PLUS";
@@ -198,19 +240,23 @@ export default function PricingContent() {
             }
 
             return (
-              <Reveal key={tier.id} delay={index * 0.03} className="flex">
+              <Reveal
+                key={tier.id}
+                delay={index * 0.03}
+                className="flex shrink-0 snap-center w-[70vw] max-w-[240px] sm:w-[240px] md:max-w-none md:w-auto md:shrink md:snap-align-none h-auto"
+              >
                 <div
                   className={cn(
                     "relative w-full flex flex-col justify-between rounded-[8px] bg-white dark:bg-zinc-900 transition-all duration-300",
                     isPlus
-                      ? "pt-3 px-4 pb-6.5 z-10 shadow-lg translate-y-2"
-                      : "p-4",
+                      ? "pt-3 px-3.5 pb-5 md:pb-6.5 z-10 shadow-lg md:translate-y-2"
+                      : "p-3.5 md:p-4",
                     tier.theme.border
                   )}
                 >
                   {/* Top Badge for Plus Plan */}
                   {isPlus && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0038b8] via-[#0055ff] to-[#0088ff] text-white text-[12px] font-bold px-7 md:px-8 py-1.5 rounded-full shadow-md whitespace-nowrap">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0038b8] via-[#0055ff] to-[#0088ff] text-white text-[12px] font-bold px-7 md:px-8 py-1.5 rounded-full shadow-md whitespace-nowrap z-20">
                       Most Popular
                     </div>
                   )}
@@ -295,6 +341,24 @@ export default function PricingContent() {
               </Reveal>
             );
           })}
+        </div>
+
+        {/* Mobile Swipe Pagination Dots */}
+        <div className="flex md:hidden justify-center items-center gap-2 mt-2">
+          {PLAN_TIERS.map((tier, index) => (
+            <button
+              key={tier.id}
+              type="button"
+              onClick={() => scrollToCard(index)}
+              className={cn(
+                "h-2 rounded-full transition-all duration-300 cursor-pointer",
+                activeCardIndex === index
+                  ? "w-6 bg-[#0060ff]"
+                  : "w-2 bg-slate-300 dark:bg-zinc-700"
+              )}
+              aria-label={`Go to ${tier.name} plan`}
+            />
+          ))}
         </div>
       </section>
     </div>
