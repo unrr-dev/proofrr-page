@@ -157,16 +157,16 @@ export function LandingPage() {
           </div>
 
           <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
-            <h1 className="mt-4 max-w-4xl text-[#101011] dark:text-white font-heading text-[2.1rem] xs:text-[2.7rem] sm:text-[5rem] md:text-[6.2rem] leading-[1.05] font-bold tracking-[-0.03em] flex flex-col items-center">
+            <h1 className="mt-4 max-w-4xl text-[#101011] dark:text-white font-heading text-[1.75rem] xs:text-[2.25rem] sm:text-[4.2rem] md:text-[5.5rem] leading-[1.08] font-bold tracking-[-0.03em] flex flex-col items-center text-center">
               <span className="whitespace-nowrap">Creative Reviews,</span>
-              <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic leading-tight">Simplified.</span>
+              <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic leading-tight mt-1 sm:mt-2">Simplified.</span>
             </h1>
 
-            <Reveal delay={0.3} duration={1} className="mt-6 max-w-2xl">
-              <p className="text-base leading-relaxed text-[#606266] dark:text-zinc-400 sm:text-lg">
-                Review, comment, approve, and deliver creative work faster. Bring
-                feedback, approvals, AI insights, files, and conversations into
-                one organized workspace.
+            <Reveal delay={0.3} duration={1} className="mt-5 max-w-3xl mx-auto">
+              <p className="text-sm xs:text-base leading-relaxed text-[#606266] dark:text-zinc-400 sm:text-lg text-center">
+                Review, comment, approve, and deliver creative work faster. Bring<br />
+                feedback, approvals, AI insights, files, and conversations into one<br />
+                organized workspace.
               </p>
             </Reveal>
           </div>
