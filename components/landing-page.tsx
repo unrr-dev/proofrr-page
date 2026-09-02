@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Play, Star, MessageSquare, Sparkles, Zap, LayoutGrid, CloudUpload, CheckCircle } from "lucide-react";
@@ -30,8 +30,6 @@ import { ProofrrDemoVideo } from "@/components/proofrr-demo-video";
 import { ProofrrLinkButton } from "@/components/proofrr-link-button";
 import { Reveal } from "@/components/reveal";
 import { WordReveal } from "@/components/word-reveal";
-
-
 
 const SHADED_CELLS = [
   { r: 1, c: 3 },
@@ -202,41 +200,119 @@ export function LandingPage() {
         />
       </section>
 
-      <section className="relative z-10 flex justify-center pt-16 md:pt-24 w-full px-0 mx-0">
-        <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788347531/Frame_1000002101_3_wrmv6x.png"
-          alt="Why Proofrr? Everything you need to review, all in one place."
-          width={1920}
-          height={1000}
-          className="w-full h-auto dark:invert dark:hue-rotate-180"
-        />
+      {/* Features Section */}
+      <section className="relative z-10 flex flex-col items-center pt-8 md:pt-24 w-full px-0 mx-0">
+        {/* Mobile Features Image */}
+        <div className="w-full px-4 md:hidden">
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788349216/Frame_13_2_m4som9.png"
+            alt="Why Proofrr? Everything you need to review, all in one place."
+            width={450}
+            height={1200}
+            className="w-full h-auto mx-auto dark:invert dark:hue-rotate-180"
+          />
+        </div>
+        {/* Desktop Features Image */}
+        <div className="hidden md:block w-full">
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788347531/Frame_1000002101_3_wrmv6x.png"
+            alt="Why Proofrr? Everything you need to review, all in one place."
+            width={1920}
+            height={1000}
+            className="w-full h-auto dark:invert dark:hue-rotate-180"
+          />
+        </div>
       </section>
 
-      <section className="relative z-10 flex justify-center pt-4 md:pt-6 w-full px-0 mx-0">
-        {/* Light Mode Steps Image */}
+      {/* Workflow Section */}
+      <section className="relative z-10 flex justify-center pt-0 md:pt-6 w-full px-0 mx-0">
+        {/* Mobile Workflow Image - Light Mode */}
+        <div className="w-full px-4 md:hidden dark:hidden">
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788349235/Flow_of_user_3_jgnswm.png"
+            alt="Simplify Your Workflow - Up and running in minutes"
+            width={450}
+            height={1200}
+            className="w-full h-auto mx-auto"
+          />
+        </div>
+        {/* Mobile Workflow Image - Black/Dark Mode */}
+        <div className="w-full px-4 hidden dark:max-md:block">
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788350444/Flow_of_user_4_pfya20.png"
+            alt="Simplify Your Workflow - Up and running in minutes"
+            width={450}
+            height={1200}
+            className="w-full h-auto mx-auto"
+          />
+        </div>
+        {/* Desktop Light Mode Steps Image */}
         <Image
           src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712807/Flow_of_user_1_kwfumg.png"
           alt="Simplify Your Workflow - Up and running in minutes"
           width={1920}
           height={600}
-          className="w-full h-auto dark:hidden"
+          className="w-full h-auto hidden md:block dark:hidden"
         />
-        {/* Dark Mode Steps Image */}
+        {/* Desktop Dark Mode Steps Image */}
         <Image
           src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784813419/Flow_of_user_2_dfyv56.png"
           alt="Simplify Your Workflow - Up and running in minutes"
           width={1920}
           height={600}
-          className="w-full h-auto hidden dark:block"
+          className="w-full h-auto hidden md:dark:block"
         />
       </section>
 
-      <section id="integrations" className="relative z-10 flex justify-center pt-20 md:pt-28 px-4">
+      <section id="integrations" className="relative z-10 flex flex-col items-center pt-16 md:pt-28 px-4 max-w-[1200px] mx-auto">
+        {/* Mobile View Integrations */}
+        <div className="w-full flex flex-col items-start text-left md:hidden">
+          {/* Mobile Diagram Image - Light Mode */}
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788349336/Proofrr_connections_image_1_dxuhw7.png"
+            alt="Proofrr connections diagram"
+            width={450}
+            height={450}
+            className="w-full h-auto mx-auto mb-6 dark:hidden"
+          />
+          {/* Mobile Diagram Image - Black/Dark Mode */}
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788350180/Proofrr_connections_image_2_mup7ir.png"
+            alt="Proofrr connections diagram"
+            width={450}
+            height={450}
+            className="w-full h-auto mx-auto mb-6 hidden dark:block"
+          />
+
+          {/* UI Text & Button */}
+          <div className="w-full px-1">
+            <p className="text-[11px] font-bold tracking-wider text-[#101011] dark:text-zinc-300 uppercase mb-2.5">
+              ONE PLATFORM, UNLIMITED INTEGRATIONS
+            </p>
+            <h2 className="font-heading text-3xl font-bold leading-[1.2] text-[#101011] dark:text-white tracking-tight mb-3">
+              <span className="font-serif-italic italic font-medium text-[#3563f0] dark:text-[#3b82f6]">Connect the tools your team</span> already relies on.
+            </h2>
+            <p className="text-sm leading-relaxed text-[#606266] dark:text-zinc-400 font-normal mb-5 max-w-md">
+              Proofrr sits in the middle of your review process so files, calendars, calls, AI tools, and delivery workflows stay connected.
+            </p>
+            <Link
+              href={INTEGRATIONS_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#101011] dark:bg-white text-white dark:text-[#101011] text-xs font-semibold shadow-sm hover:opacity-90 transition-all cursor-pointer"
+            >
+              <span>Explore integrations</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Desktop View Integrations */}
         <Link
           href={INTEGRATIONS_URL}
           target="_blank"
           rel="noreferrer"
-          className="w-full max-w-[1200px] block transition-transform duration-300 hover:scale-[1.005]"
+          className="w-full max-w-[1200px] hidden md:block transition-transform duration-300 hover:scale-[1.005]"
         >
           {/* Light Mode Integrations */}
           <Image
@@ -258,14 +334,37 @@ export function LandingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative z-10 flex justify-center pt-20 md:pt-28 w-full px-0 mx-0">
-        <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788348123/Frame_1000002113_2_rhdzip.png"
-          alt="Teams that moved to Proofrr, love it."
-          width={1920}
-          height={960}
-          className="w-full h-auto dark:invert dark:hue-rotate-180"
-        />
+      <section className="relative z-10 flex flex-col items-center pt-8 md:pt-28 w-full px-0 mx-0">
+        {/* Mobile Testimonials Image - Light Mode */}
+        <div className="w-full px-4 md:hidden dark:hidden">
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788349464/Frame_1000002111_ldaybg.png"
+            alt="Teams that moved to Proofrr, love it."
+            width={450}
+            height={1200}
+            className="w-full h-auto mx-auto"
+          />
+        </div>
+        {/* Mobile Testimonials Image - Dark Mode */}
+        <div className="w-full px-4 hidden dark:max-md:block">
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788350409/Frame_1000002111_1_ga8xng.png"
+            alt="Teams that moved to Proofrr, love it."
+            width={450}
+            height={1200}
+            className="w-full h-auto mx-auto"
+          />
+        </div>
+        {/* Desktop Testimonials Image */}
+        <div className="hidden md:block w-full">
+          <Image
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788348123/Frame_1000002113_2_rhdzip.png"
+            alt="Teams that moved to Proofrr, love it."
+            width={1920}
+            height={960}
+            className="w-full h-auto dark:invert dark:hue-rotate-180"
+          />
+        </div>
       </section>
 
       <CtaSection className="pt-4 md:pt-6" />
