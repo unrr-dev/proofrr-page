@@ -279,7 +279,7 @@ export function LandingPage() {
         </div>
         {/* Desktop Light Mode Steps Image */}
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712807/Flow_of_user_1_kwfumg.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353303/Flow_of_user_5_qxzjq7.png"
           alt="Simplify Your Workflow - Up and running in minutes"
           width={1920}
           height={600}
@@ -287,7 +287,7 @@ export function LandingPage() {
         />
         {/* Desktop Dark Mode Steps Image */}
         <Image
-          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784813419/Flow_of_user_2_dfyv56.png"
+          src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353402/Flow_of_user_6_o2dpgj.png"
           alt="Simplify Your Workflow - Up and running in minutes"
           width={1920}
           height={600}
@@ -295,73 +295,50 @@ export function LandingPage() {
         />
       </section>
 
-      <section id="integrations" className="relative z-10 flex flex-col items-center pt-16 md:pt-28 px-4 max-w-[1200px] mx-auto">
-        {/* Mobile View Integrations */}
-        <div className="w-full flex flex-col items-start text-left md:hidden">
-          {/* Mobile Diagram Image - Light Mode */}
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788349336/Proofrr_connections_image_1_dxuhw7.png"
-            alt="Proofrr connections diagram"
-            width={450}
-            height={450}
-            className="w-full h-auto mx-auto mb-6 dark:hidden"
-          />
-          {/* Mobile Diagram Image - Black/Dark Mode */}
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788350180/Proofrr_connections_image_2_mup7ir.png"
-            alt="Proofrr connections diagram"
-            width={450}
-            height={450}
-            className="w-full h-auto mx-auto mb-6 hidden dark:block"
-          />
+      <section id="integrations" className="relative z-10 flex flex-col items-center pt-12 md:pt-24 px-4 max-w-[1200px] mx-auto">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Left Diagram Card Image */}
+          <div className="w-full flex justify-center">
+            {/* Light Mode Diagram Image */}
+            <Image
+              src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353459/Proofrr_connections_image_3_pgohb7.png"
+              alt="Proofrr Integrations Diagram"
+              width={540}
+              height={540}
+              className="w-full max-w-[480px] md:max-w-[540px] h-auto dark:hidden drop-shadow-sm"
+            />
+            {/* Dark Mode Diagram Image */}
+            <Image
+              src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353506/Proofrr_connections_image_4_vkdieo.png"
+              alt="Proofrr Integrations Diagram"
+              width={540}
+              height={540}
+              className="w-full max-w-[480px] md:max-w-[540px] h-auto hidden dark:block drop-shadow-sm"
+            />
+          </div>
 
-          {/* UI Text & Button */}
-          <div className="w-full px-1">
-            <p className="text-[11px] font-bold tracking-wider text-[#101011] dark:text-zinc-300 uppercase mb-2.5">
+          {/* Right Content Column (HTML Text & Button) */}
+          <div className="w-full flex flex-col items-start text-left md:pl-4">
+            <p className="text-[11px] font-bold tracking-[0.15em] text-[#101011] dark:text-zinc-300 uppercase mb-3">
               ONE PLATFORM, UNLIMITED INTEGRATIONS
             </p>
-            <h2 className="font-heading text-3xl font-bold leading-[1.2] text-[#101011] dark:text-white tracking-tight mb-3">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-[2.65rem] font-bold leading-[1.15] text-[#101011] dark:text-white tracking-tight mb-4">
               <span className="font-serif-italic italic font-medium text-[#3563f0] dark:text-[#3b82f6]">Connect the tools your team</span> already relies on.
             </h2>
-            <p className="text-sm leading-relaxed text-[#606266] dark:text-zinc-400 font-normal mb-5 max-w-md">
+            <p className="text-sm sm:text-base leading-relaxed text-[#606266] dark:text-zinc-400 font-normal mb-6 max-w-lg">
               Proofrr sits in the middle of your review process so files, calendars, calls, AI tools, and delivery workflows stay connected.
             </p>
             <Link
               href={INTEGRATIONS_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#101011] dark:bg-white text-white dark:text-[#101011] text-xs font-semibold shadow-sm hover:opacity-90 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#101011] dark:bg-white text-white dark:text-[#101011] text-sm font-semibold shadow-md hover:opacity-90 transition-all cursor-pointer"
             >
               <span>Explore integrations</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
-
-        {/* Desktop View Integrations */}
-        <Link
-          href={INTEGRATIONS_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="w-full max-w-[1200px] hidden md:block transition-transform duration-300 hover:scale-[1.005]"
-        >
-          {/* Light Mode Integrations */}
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1784712581/Frame_101_1_tjwazv.png"
-            alt="Proofrr Integrations - Connect the tools your team already relies on"
-            width={1200}
-            height={550}
-            className="w-full h-auto dark:hidden"
-          />
-          {/* Dark Mode Integrations */}
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788171936/Frame_101_2_ct0ihn.png"
-            alt="Proofrr Integrations - Connect the tools your team already relies on"
-            width={1200}
-            height={550}
-            className="w-full h-auto hidden dark:block"
-          />
-        </Link>
       </section>
 
       {/* Testimonials Section */}
@@ -389,7 +366,7 @@ export function LandingPage() {
         {/* Desktop Testimonials Image */}
         <div className="hidden md:block w-full">
           <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788348123/Frame_1000002113_2_rhdzip.png"
+            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353602/Frame_1000002113_3_tpftwe.png"
             alt="Teams that moved to Proofrr, love it."
             width={1920}
             height={960}
