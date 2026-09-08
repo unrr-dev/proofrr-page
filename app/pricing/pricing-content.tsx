@@ -49,8 +49,8 @@ const PLAN_TIERS: PlanTier[] = [
   {
     id: "LITE",
     name: "Lite",
-    monthlyPrice: 45,
-    annualMonthlyPrice: 32,
+    monthlyPrice: 15,
+    annualMonthlyPrice: 10,
     description: "Everything you need to get more done.",
     ctaText: "Select Plan",
     ctaClass: "bg-[#a21caf] hover:bg-[#86198f] text-white shadow-md shadow-pink-500/20 rounded-[8px]",
@@ -67,8 +67,8 @@ const PLAN_TIERS: PlanTier[] = [
   {
     id: "PLUS",
     name: "Plus",
-    monthlyPrice: 80,
-    annualMonthlyPrice: 56,
+    monthlyPrice: 50,
+    annualMonthlyPrice: 38,
     badge: "Most Popular",
     description: "Perfect for small teams and growing business.",
     ctaText: "Select Plan",
@@ -86,8 +86,8 @@ const PLAN_TIERS: PlanTier[] = [
   {
     id: "PRO",
     name: "Pro",
-    monthlyPrice: 150,
-    annualMonthlyPrice: 105,
+    monthlyPrice: 100,
+    annualMonthlyPrice: 69,
     description: "Advanced feature for productive teams.",
     ctaText: "Select Plan",
     ctaClass: "bg-gradient-to-r from-[#0038b8] via-[#0055ff] to-[#0088ff] hover:opacity-95 text-white shadow-md shadow-blue-500/20 rounded-[8px]",
@@ -285,9 +285,7 @@ export default function PricingContent() {
                           <span className="text-[28px] font-bold text-[#0f172a] dark:text-white tracking-tight leading-none">
                             {displayPrice}
                           </span>
-                          {billingCycle === "yearly" && (
-                            <span className="text-[10px] text-slate-600 font-medium">/mo</span>
-                          )}
+                          <span className="text-[10px] text-slate-600 font-medium">/mo</span>
                         </div>
                       ) : (
                         <span className="text-[20px] font-bold text-[#0f172a] dark:text-white leading-tight block">
