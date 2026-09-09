@@ -255,26 +255,45 @@ export function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-10 flex flex-col items-center pt-8 md:pt-24 w-full px-0 mx-0">
-        {/* Mobile Features Image */}
-        <div className="w-full px-4 md:hidden">
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788349216/Frame_13_2_m4som9.png"
-            alt="Why Proofrr? Everything you need to review, all in one place."
-            width={450}
-            height={1200}
-            className="w-full h-auto mx-auto dark:invert dark:hue-rotate-180"
-          />
+      <section id="features" className="relative z-10 flex flex-col items-center pt-12 md:pt-24 pb-12 w-full px-4 max-w-[1300px] mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+          <p className="text-[13px] sm:text-[14px] md:text-[15px] font-extrabold tracking-[0.22em] text-[#3563f0] dark:text-[#3b82f6] uppercase mb-3.5">
+            WHY PROOFRR?
+          </p>
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-[3.25rem] font-bold leading-[1.15] text-[#101011] dark:text-white tracking-tight">
+            Everything you need to review,<br />
+            all in{" "}
+            <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic">
+              one place.
+            </span>
+          </h2>
         </div>
-        {/* Desktop Features Image */}
-        <div className="hidden md:block w-full">
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788347531/Frame_1000002101_3_wrmv6x.png"
-            alt="Why Proofrr? Everything you need to review, all in one place."
-            width={1920}
-            height={1000}
-            className="w-full h-auto dark:invert dark:hue-rotate-180"
-          />
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {HOME_FEATURES.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-zinc-900/90 border border-slate-200/80 dark:border-zinc-800 rounded-[1.85rem] p-6 sm:p-7 flex flex-col justify-between shadow-[0_5px_25px_rgba(0,0,0,0.035)] dark:shadow-none hover:shadow-[0_12px_35px_rgba(53,99,240,0.09)] transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="w-full mb-5 flex justify-center items-center overflow-hidden h-[210px] sm:h-[230px] md:h-[245px] rounded-xl relative">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-contain scale-[1.3] transition-transform duration-300 hover:scale-[1.35] dark:invert dark:hue-rotate-180"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl sm:text-[22px] font-bold text-[#101011] dark:text-white mb-2.5 leading-snug">
+                  {feature.title}
+                </h3>
+                <p className="text-[14.5px] sm:text-[15px] leading-relaxed text-slate-500 dark:text-zinc-400 font-normal">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

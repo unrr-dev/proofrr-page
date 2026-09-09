@@ -48,21 +48,21 @@ export const HOME_FEATURES = [
     title: "One workspace. Zero confusion.",
     description:
       "Design, feedback, and approvals live in one clean dashboard so nothing gets lost across tools or threads.",
-    image: "/proofrr/dashboard.png",
+    image: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788963575/dashboard_12_aeyxn1.png",
     tint: "bg-white",
   },
   {
     title: "Comment where it matters.",
     description:
       "Leave precise, contextual feedback directly on designs, screens, or prototypes. No screenshots. No back and forth.",
-    image: "/proofrr/hero-card-signoff.png",
+    image: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788963569/Comment_qyfwcs.png",
     tint: "bg-[#fff4ce]",
   },
   {
     title: "Faster sign offs, fewer revisions.",
     description:
       "Real time collaboration keeps everyone aligned, helping teams move from review to approval without delays.",
-    image: "/proofrr/feature-collab.png",
+    image: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788963571/Approval_timeline_wn0mfq.png",
     tint: "bg-[#f1f2ff]",
   },
 ] as const;
