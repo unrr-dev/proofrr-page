@@ -14,6 +14,7 @@ import {
   MINOR_BENEFITS,
   PLATFORM_URL,
   STEP_ITEMS,
+  TESTIMONIALS_DATA,
   WORKFLOWS,
 } from "@/lib/proofrr-content";
 import { cn } from "@/lib/utils";
@@ -46,6 +47,28 @@ const SHADED_CELLS = [
   { r: 8, c: 4 },
   { r: 9, c: 10 },
 ];
+
+function BearAvatar({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className={cn("w-11 h-11 rounded-full overflow-hidden shrink-0 shadow-sm", className)}
+    >
+      <circle cx="50" cy="50" r="50" fill="#FFC72C" />
+      <circle cx="28" cy="32" r="11" fill="#8C4A1D" />
+      <circle cx="28" cy="32" r="6" fill="#FAD1A7" />
+      <circle cx="72" cy="32" r="11" fill="#8C4A1D" />
+      <circle cx="72" cy="32" r="6" fill="#FAD1A7" />
+      <ellipse cx="50" cy="50" rx="27" ry="23" fill="#8C4A1D" />
+      <ellipse cx="50" cy="56" rx="13" ry="9" fill="#FAD1A7" />
+      <ellipse cx="50" cy="52" rx="4.5" ry="3" fill="#2D1808" />
+      <path d="M 50 55 L 50 59" stroke="#2D1808" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="39" cy="45" r="3.2" fill="#2D1808" />
+      <circle cx="61" cy="45" r="3.2" fill="#2D1808" />
+      <path d="M 22 84 C 36 74 64 74 78 84 L 84 100 L 16 100 Z" fill="#D32F2F" />
+    </svg>
+  );
+}
 
 function GridBackground() {
   const [mounted, setMounted] = useState(false);
@@ -342,36 +365,65 @@ export function LandingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative z-10 flex flex-col items-center pt-8 md:pt-28 w-full px-0 mx-0">
-        {/* Mobile Testimonials Image - Light Mode */}
-        <div className="w-full px-4 md:hidden dark:hidden">
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788349464/Frame_1000002111_ldaybg.png"
-            alt="Teams that moved to Proofrr, love it."
-            width={450}
-            height={1200}
-            className="w-full h-auto mx-auto"
-          />
+      <section className="relative z-10 flex flex-col items-center pt-14 md:pt-24 pb-14 w-full px-4 max-w-[1300px] mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+          <p className="text-[11px] font-bold tracking-[0.2em] text-[#3563f0] dark:text-[#3b82f6] uppercase mb-3">
+            TESTIMONIALS
+          </p>
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-[3.25rem] font-bold leading-[1.12] text-[#101011] dark:text-white tracking-tight">
+            Teams that moved to Proofrr,{" "}
+            <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic">
+              love it.
+            </span>
+          </h2>
         </div>
-        {/* Mobile Testimonials Image - Dark Mode */}
-        <div className="w-full px-4 hidden dark:max-md:block">
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788350409/Frame_1000002111_1_ga8xng.png"
-            alt="Teams that moved to Proofrr, love it."
-            width={450}
-            height={1200}
-            className="w-full h-auto mx-auto"
-          />
-        </div>
-        {/* Desktop Testimonials Image */}
-        <div className="hidden md:block w-full">
-          <Image
-            src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353602/Frame_1000002113_3_tpftwe.png"
-            alt="Teams that moved to Proofrr, love it."
-            width={1920}
-            height={960}
-            className="w-full h-auto dark:invert dark:hue-rotate-180"
-          />
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          {TESTIMONIALS_DATA.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="bg-white dark:bg-zinc-900/90 border border-slate-200/80 dark:border-zinc-800 rounded-[1.85rem] p-7 sm:p-9 lg:p-10 flex flex-col justify-between shadow-[0_5px_25px_rgba(0,0,0,0.035)] dark:shadow-none hover:shadow-[0_12px_35px_rgba(53,99,240,0.09)] transition-all duration-300 hover:-translate-y-1 min-h-[320px] sm:min-h-[345px]"
+            >
+              <div>
+                <div className="flex items-center gap-1 mb-5">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-[18px] h-[18px] fill-[#f59e0b] text-[#f59e0b]"
+                    />
+                  ))}
+                </div>
+
+                <p className="text-[15.5px] sm:text-[16.5px] lg:text-[17px] leading-[1.65] text-slate-700 dark:text-zinc-300 font-normal">
+                  &ldquo;{testimonial.quotePrefix}
+                  {testimonial.highlightText && (
+                    <span className="text-[#3563f0] dark:text-[#3b82f6] font-semibold">
+                      {testimonial.highlightText}
+                    </span>
+                  )}
+                  {testimonial.quoteSuffix}&rdquo;
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3.5 mt-8 pt-1">
+                <Image
+                  src={testimonial.avatar}
+                  alt={testimonial.author}
+                  width={52}
+                  height={52}
+                  className="w-12 h-12 sm:w-13 sm:h-13 rounded-full object-cover shrink-0"
+                />
+                <div className="flex flex-col">
+                  <span className="text-[16px] font-bold text-[#101011] dark:text-white leading-tight">
+                    {testimonial.author}
+                  </span>
+                  <span className="text-[13px] text-[#8a8c94] dark:text-zinc-400 font-normal mt-0.5">
+                    {testimonial.role}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

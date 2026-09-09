@@ -133,6 +133,39 @@ export const WORKFLOWS = [
   "Designers & Video Editors",
 ] as const;
 
+export const TESTIMONIALS_DATA = [
+  {
+    id: 1,
+    rating: 5,
+    quotePrefix: "We cut our revision cycles from 5 rounds to 2. Proofrr makes it impossible for feedback to get lost \u2014 everything is in one place with ",
+    highlightText: "clear ownership.",
+    quoteSuffix: " Our team ships creative work 3 weeks faster on average now.",
+    author: "Vaishnavi",
+    role: "Marketing Manager, Luma Health",
+    avatar: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788962590/Mask_group_bhsrsi.png",
+  },
+  {
+    id: 2,
+    rating: 5,
+    quotePrefix: "The AI summaries alone are worth it. I used to spend 20 minutes reading through comment threads before calls. Now I get the full picture in 30 seconds. Our client satisfaction scores jumped ",
+    highlightText: "40% in 6 months.",
+    quoteSuffix: "",
+    author: "Vaishnavi",
+    role: "Marketing Manager, Luma Health",
+    avatar: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788962593/Mask_group_1_ed4qlt.png",
+  },
+  {
+    id: 3,
+    rating: 5,
+    quotePrefix: "Running an agency means managing 20+ active projects. Proofrr turned our chaotic approval process into something actually manageable. We onboarded 4 new clients without hiring \u2014 ",
+    highlightText: "that's real ROI.",
+    quoteSuffix: "",
+    author: "Vaishnavi",
+    role: "Marketing Manager, Luma Health",
+    avatar: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788962602/Mask_group_2_vivnpd.png",
+  },
+] as const;
+
 export const ABOUT_BULLETS = [
   "No scattered WhatsApp feedback.",
   "No buried email threads.",
