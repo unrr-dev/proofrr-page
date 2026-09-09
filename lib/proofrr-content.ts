@@ -20,6 +20,7 @@ export const FOOTER_QUICK_LINKS = [
 export const FOOTER_ALL_PAGES = [
   { href: "/about", label: "About" },
   { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms & Conditions" },
   { href: "/contact", label: "Contact" },
   { href: "/blog", label: "Blog" },
 ] as const;
@@ -254,6 +255,100 @@ export const PRIVACY_SECTIONS = [
     paragraphs: [
       "If you have questions or concerns, contact support@proofrr.com.",
       "Company: Proofrr",
+    ],
+  },
+] as const;
+
+export const TERMS_SECTIONS = [
+  {
+    title: "1. Acceptance of Terms & Service Scope",
+    paragraphs: [
+      "Welcome to Proofrr. Proofrr is an all-in-one creative collaboration and visual proofing platform designed for creative freelancers, marketing teams, design agencies, video editors, and brand managers.",
+      "By creating a workspace, sharing review links, uploading assets, or using any Proofrr web applications and platform APIs (proofrr.com), you agree to be bound by these Terms & Conditions. If you do not agree to these terms, you must not access or use the platform.",
+    ],
+  },
+  {
+    title: "2. Workspace Accounts & Registration",
+    paragraphs: [
+      "To initiate creative projects, invite team members, and upload review assets, you must register a Proofrr account.",
+      "Workspace account owners are responsible for maintaining the security of their credentials, assigning correct team member roles (Admin, Editor, Reviewer), and managing workspace access permissions.",
+      "You agree to provide accurate registration details and to update them promptly if your contact or billing information changes.",
+    ],
+  },
+  {
+    title: "3. Creative Asset Uploads & Intellectual Property",
+    paragraphs: [
+      "You retain 100% full ownership of all creative assets, design files, prototypes, video files, documents, brand collateral, and feedback comments ('Workspace Assets') uploaded to or created within Proofrr.",
+      "By uploading content, you grant Proofrr a limited, non-exclusive, worldwide license solely necessary to host, render visual previews, encode media, process feedback, and display your assets to authorized reviewers.",
+      "Proofrr does not claim any ownership over your creative deliverables, nor do we sell, distribute, or publicly display your private client projects.",
+    ],
+  },
+  {
+    title: "4. Guest & Client Reviewer Access (No-Login Proofing)",
+    paragraphs: [
+      "Proofrr enables seamless client reviews by allowing guest stakeholders to view creatives, leave contextual pin-point markup comments, and issue final sign-offs without requiring an active Proofrr account login.",
+      "Workspace owners and project creators are solely responsible for sharing review links securely and configuring optional access passcodes, link expiration dates, or download permissions.",
+      "Any feedback or approval submitted by a guest reviewer via your project link is recorded as part of your workspace audit trail and project history.",
+    ],
+  },
+  {
+    title: "5. Visual Proofing, Version Comparison & Approvals",
+    paragraphs: [
+      "Proofrr provides interactive annotation overlays, pixel-accurate feedback markers, side-by-side version comparison tools, and stage-by-stage approval tracking.",
+      "While Proofrr facilitates clear collaboration, account owners remain responsible for verifying final creative files, print readiness, brand compliance, and delivery files before client handoff.",
+      "Proofrr is not liable for project delays, missed client deadlines, printing errors, or erroneous sign-offs executed by workspace users or guest reviewers.",
+    ],
+  },
+  {
+    title: "6. AI-Powered Feedback & Workflow Tools",
+    paragraphs: [
+      "Proofrr integrates AI tools to assist creative workflows, including automated spell-checking, smart comment summarization, and action-item extraction.",
+      "AI features operate as productivity helpers and should be reviewed by human team members. Workspace project assets, design briefs, and comments processed by AI are kept strictly confidential and are never used to train public or commercial AI models.",
+    ],
+  },
+  {
+    title: "7. Subscriptions, Pricing & Free Plan",
+    paragraphs: [
+      "Proofrr provides a free plan for getting started alongside paid subscription tiers for expanded storage, advanced AI features, custom branding, and additional team seats.",
+      "Paid plans are billed on a recurring monthly or annual basis through our secure payment gateway. Subscriptions renew automatically unless cancelled prior to the next billing date.",
+      "Subscription cancellations take effect at the end of the current billing cycle. All fees paid are non-refundable except where explicitly required by law.",
+    ],
+  },
+  {
+    title: "8. Storage Limits & Data Retention",
+    paragraphs: [
+      "Each Proofrr workspace plan includes specific storage capacity and project limits as detailed on our Pricing page.",
+      "Your workspace data, project history, and revision files remain accessible while your account is active and in good standing.",
+      "If a workspace is deleted or an account is terminated, Proofrr retains your project data for a 30-day grace period to allow data export, after which project assets may be permanently purged from our servers.",
+    ],
+  },
+  {
+    title: "9. Acceptable Use & Content Restrictions",
+    paragraphs: [
+      "You agree not to use Proofrr to upload, store, or share content that is illegal, defamatory, harmful, contains computer viruses, or infringes upon third-party copyrights, trademarks, or privacy rights.",
+      "You agree not to attempt to reverse engineer, scrape, overload, hack, or exploit vulnerabilities in Proofrr's application infrastructure or storage APIs.",
+    ],
+  },
+  {
+    title: "10. Platform Uptime & Service Maintenance",
+    paragraphs: [
+      "We aim for high platform availability and fast asset delivery via optimized cloud infrastructure.",
+      "However, Proofrr does not guarantee 100% uninterrupted uptime. Scheduled maintenance, system upgrades, or emergency infrastructure patches may occasionally cause brief service pauses. We strive to notify users in advance whenever possible.",
+    ],
+  },
+  {
+    title: "11. Limitation of Liability",
+    paragraphs: [
+      "To the maximum extent permitted by applicable law, Proofrr and its officers, directors, and employees shall not be liable for any indirect, incidental, special, or consequential damages, including loss of revenue, lost client contracts, or lost data.",
+      "Our aggregate liability for any claims arising from the platform shall not exceed the total amount paid by your workspace to Proofrr in the twelve (12) months preceding the event.",
+    ],
+  },
+  {
+    title: "12. Modifications to Terms & Contact Information",
+    paragraphs: [
+      "We may update these Terms & Conditions periodically to reflect new product capabilities or legal requirements. Updated terms will be published on this page with a revised effective date.",
+      "If you have questions regarding these Terms & Conditions or Proofrr workspace policies, please reach out to support@proofrr.com.",
+      "Company: Proofrr (proofrr.com)",
     ],
   },
 ] as const;
