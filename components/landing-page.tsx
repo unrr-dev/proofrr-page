@@ -366,11 +366,11 @@ export function LandingPage() {
 
       {/* Testimonials Section */}
       <section className="relative z-10 flex flex-col items-center pt-14 md:pt-24 pb-14 w-full px-4 max-w-[1300px] mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-14">
           <p className="text-[11px] font-bold tracking-[0.2em] text-[#3563f0] dark:text-[#3b82f6] uppercase mb-3">
             TESTIMONIALS
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-[3.25rem] font-bold leading-[1.12] text-[#101011] dark:text-white tracking-tight">
+          <h2 className="font-heading text-[1.35rem] xs:text-2xl sm:text-4xl md:text-[3rem] lg:text-[3.25rem] font-bold leading-[1.12] text-[#101011] dark:text-white tracking-tight whitespace-nowrap">
             Teams that moved to Proofrr,{" "}
             <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic">
               love it.
