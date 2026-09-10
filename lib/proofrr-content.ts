@@ -272,19 +272,25 @@ export const PRIVACY_SECTIONS = [
     ],
   },
   {
-    title: "11. Children’s Privacy",
+    title: "11. Google API User Data / Limited Use",
+    paragraphs: [
+      "Proofrr's use of data received from Google Workspace APIs adheres to the Google User Data Policy, including the Limited Use requirements. Google Workspace user data is used only to provide the user-facing functionality for which the user has authorized access and is not used to develop, train, or improve generalized artificial intelligence or machine learning models.",
+    ],
+  },
+  {
+    title: "12. Children’s Privacy",
     paragraphs: [
       "Proofrr is not intended for users under the age of 13 and does not knowingly collect data from children.",
     ],
   },
   {
-    title: "12. Updates to This Policy",
+    title: "13. Updates to This Policy",
     paragraphs: [
       "The policy may be updated over time, with changes reflected using a revised effective date.",
     ],
   },
   {
-    title: "13. Contact Us",
+    title: "14. Contact Us",
     paragraphs: [
       "If you have questions or concerns, contact support@proofrr.com.",
       "Company: Proofrr",

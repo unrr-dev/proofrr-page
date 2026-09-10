@@ -19,6 +19,7 @@ const getSectionMeta = (index: number) => {
     { imgSrc: "https://res.cloudinary.com/djxnyqaya/image/upload/v1784308297/ix_user-check-filled_xymuky.png" },
     { imgSrc: "https://res.cloudinary.com/djxnyqaya/image/upload/v1784308304/material-symbols_cookie_ajf62s.png" },
     { imgSrc: "https://res.cloudinary.com/djxnyqaya/image/upload/v1784308308/mdi_puzzle_axqeqy.png" },
+    { imgSrc: "https://res.cloudinary.com/djxnyqaya/image/upload/v1784308268/mdi_shield-check_dlfzzh.png" },
     { imgSrc: "https://res.cloudinary.com/djxnyqaya/image/upload/v1784308313/mynaui_baby-solid_yw4hdj.png" },
     { imgSrc: "https://res.cloudinary.com/djxnyqaya/image/upload/v1784308317/mdi_file-edit_kovmde.png" },
     { imgSrc: "https://res.cloudinary.com/djxnyqaya/image/upload/v1784308321/ic_baseline-mail_nvhjqp.png" }
