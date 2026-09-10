@@ -314,7 +314,7 @@ function DesktopCta() {
         <div className="absolute inset-0 flex flex-col items-center justify-center -translate-y-7 lg:-translate-y-10 xl:-translate-y-12 px-8 text-center pointer-events-none">
           <div className="pointer-events-auto max-w-[800px] flex flex-col items-center">
             {/* Main Headline */}
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-[48px] xl:text-[54px] 2xl:text-[60px] font-semibold leading-[1.12] tracking-[-0.02em] text-[#101011] dark:text-white">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-[34px] xl:text-[38px] font-semibold leading-[1.15] tracking-[-0.02em] text-[#101011] dark:text-white">
               Take your creative workflow to
               <br />
               <span className="relative inline-block mt-1 font-serif-italic italic font-medium text-[#3563f0] dark:text-[#5b86ff]">
@@ -324,7 +324,7 @@ function DesktopCta() {
                   viewBox="0 0 240 16"
                   fill="none"
                   aria-hidden="true"
-                  className="absolute -bottom-2 left-0 h-3 lg:h-4 w-full"
+                  className="absolute -bottom-2 left-0 h-3 lg:h-3.5 w-full"
                 >
                   <path
                     d="M4 6C70 2 170 1 236 5"
@@ -342,8 +342,8 @@ function DesktopCta() {
               </span>
             </h2>
 
-            {/* Subtitle / Description (Exact 3 lines matching screenshot) */}
-            <p className="mt-5 max-w-[840px] text-lg lg:text-xl xl:text-[23px] 2xl:text-[25px] leading-[1.5] text-[#9ca3af] dark:text-zinc-400 font-normal">
+            {/* Subtitle / Description */}
+            <p className="mt-4 max-w-[700px] text-xs sm:text-sm lg:text-base xl:text-[17px] leading-[1.5] text-[#9ca3af] dark:text-zinc-400 font-normal">
               Revolutionise your workflow with the most effective
               <br />
               collaboration tool. Perfect for freelancers, agencies and
@@ -352,10 +352,10 @@ function DesktopCta() {
             </p>
 
             {/* CTA Button */}
-            <div className="mt-8">
-              <span className="proofrr-button-shadow inline-flex h-14 lg:h-16 xl:h-[68px] items-center gap-3.5 rounded-full bg-[#3563f0] px-9 lg:px-11 text-base lg:text-lg xl:text-xl font-semibold text-white transition-all duration-300 group-hover:bg-[#2052e5] group-hover:scale-[1.03]">
+            <div className="mt-6">
+              <span className="proofrr-button-shadow inline-flex h-11 lg:h-12 xl:h-[50px] items-center gap-2.5 rounded-full bg-[#3563f0] px-7 lg:px-8 text-sm lg:text-base font-semibold text-white transition-all duration-300 group-hover:bg-[#2052e5] group-hover:scale-[1.03]">
                 Start Free
-                <ArrowRight className="h-5.5 w-5.5 lg:h-6.5 lg:w-6.5 transition-transform duration-300 group-hover:translate-x-1.5" />
+                <ArrowRight className="h-4.5 w-4.5 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </div>
           </div>

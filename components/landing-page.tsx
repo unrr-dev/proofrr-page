@@ -180,15 +180,15 @@ export function LandingPage() {
           </div>
 
           <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
-            <h1 className="mt-4 max-w-4xl text-[#101011] dark:text-white font-heading text-[1.75rem] xs:text-[2.25rem] sm:text-[4.2rem] md:text-[5.5rem] leading-[1.08] font-bold tracking-[-0.03em] flex flex-col items-center text-center">
+            <h1 className="mt-4 max-w-4xl text-[#101011] dark:text-white font-heading text-2xl xs:text-3xl sm:text-5xl md:text-[3.75rem] lg:text-[4rem] leading-[1.08] font-bold tracking-[-0.03em] flex flex-col items-center text-center">
               <span className="whitespace-nowrap">Creative Reviews,</span>
               <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic leading-tight mt-1 sm:mt-2">Simplified.</span>
             </h1>
 
-            <Reveal delay={0.3} duration={1} className="mt-5 max-w-3xl mx-auto">
-              <p className="text-sm xs:text-base leading-relaxed text-[#8a8c94] dark:text-zinc-400/90 sm:text-lg text-center font-normal">
-                Review, comment, approve, and deliver creative work faster. Bring<br />
-                feedback, approvals, AI insights, files, and conversations into one<br />
+            <Reveal delay={0.3} duration={1} className="mt-4 max-w-2xl mx-auto">
+              <p className="text-xs xs:text-sm sm:text-base leading-relaxed text-[#8a8c94] dark:text-zinc-400/90 text-center font-normal">
+                Review, comment, approve, and deliver creative work faster. Bring<br className="hidden sm:inline" />
+                feedback, approvals, AI insights, files, and conversations into one<br className="hidden sm:inline" />
                 organized workspace.
               </p>
             </Reveal>
@@ -255,12 +255,12 @@ export function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="relative z-10 flex flex-col items-center pt-12 md:pt-24 pb-12 w-full px-4 max-w-[1300px] mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
-          <p className="text-[13px] sm:text-[14px] md:text-[15px] font-extrabold tracking-[0.22em] text-[#3563f0] dark:text-[#3b82f6] uppercase mb-3.5">
+      <section id="features" className="relative z-10 flex flex-col items-center pt-10 md:pt-20 pb-10 w-full px-4 max-w-[1195px] mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-[64px]">
+          <p className="text-[12px] sm:text-[13px] md:text-[14px] font-extrabold tracking-[0.2em] text-[#3563f0] dark:text-[#3b82f6] uppercase mb-3">
             WHY PROOFRR?
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-[3.25rem] font-bold leading-[1.15] text-[#101011] dark:text-white tracking-tight">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-[2.25rem] lg:text-[2.5rem] font-bold leading-[1.2] text-[#101011] dark:text-white tracking-tight">
             Everything you need to review,<br />
             all in{" "}
             <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic">
@@ -273,22 +273,22 @@ export function LandingPage() {
           {HOME_FEATURES.map((feature, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-zinc-900/90 border border-slate-200/80 dark:border-zinc-800 rounded-[1.85rem] p-6 sm:p-7 flex flex-col justify-between shadow-[0_5px_25px_rgba(0,0,0,0.035)] dark:shadow-none hover:shadow-[0_12px_35px_rgba(53,99,240,0.09)] transition-all duration-300 hover:-translate-y-1"
+              className="bg-white dark:bg-zinc-900/90 border border-[#E9EDF3] dark:border-zinc-800 rounded-[20px] py-[30px] px-[25px] flex flex-col justify-between shadow-[0_5px_25px_rgba(0,0,0,0.035)] dark:shadow-none hover:shadow-[0_12px_35px_rgba(53,99,240,0.09)] transition-all duration-300 hover:-translate-y-1 gap-[10px]"
             >
-              <div className="w-full mb-5 flex justify-center items-center overflow-hidden h-[210px] sm:h-[230px] md:h-[245px] rounded-xl relative">
+              <div className="w-full mb-3 flex justify-center items-center overflow-hidden h-[190px] sm:h-[210px] md:h-[220px] rounded-xl relative">
                 <Image
                   src={feature.image}
                   alt={feature.title}
                   width={600}
                   height={400}
-                  className="w-full h-full object-contain scale-[1.3] transition-transform duration-300 hover:scale-[1.35] dark:invert dark:hue-rotate-180"
+                  className="w-full h-full object-contain scale-[1.2] transition-transform duration-300 hover:scale-[1.25] dark:invert dark:hue-rotate-180"
                 />
               </div>
-              <div>
-                <h3 className="text-xl sm:text-[22px] font-bold text-[#101011] dark:text-white mb-2.5 leading-snug">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg sm:text-[20px] font-bold text-[#101011] dark:text-white leading-snug">
                   {feature.title}
                 </h3>
-                <p className="text-[14.5px] sm:text-[15px] leading-relaxed text-slate-500 dark:text-zinc-400 font-normal">
+                <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-slate-500 dark:text-zinc-400 font-normal">
                   {feature.description}
                 </p>
               </div>
@@ -337,7 +337,7 @@ export function LandingPage() {
         />
       </section>
 
-      <section id="integrations" className="relative z-10 flex flex-col items-center pt-12 md:pt-24 px-4 max-w-[1200px] mx-auto">
+      <section id="integrations" className="relative z-10 flex flex-col items-center pt-10 md:pt-20 px-4 max-w-[1195px] mx-auto">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Diagram Card Image */}
           <div className="w-full flex justify-center">
@@ -347,7 +347,7 @@ export function LandingPage() {
               alt="Proofrr Integrations Diagram"
               width={540}
               height={540}
-              className="w-full max-w-[480px] md:max-w-[540px] h-auto dark:hidden drop-shadow-sm"
+              className="w-full max-w-[440px] md:max-w-[480px] h-auto dark:hidden drop-shadow-sm"
             />
             {/* Dark Mode Diagram Image */}
             <Image
@@ -355,41 +355,41 @@ export function LandingPage() {
               alt="Proofrr Integrations Diagram"
               width={540}
               height={540}
-              className="w-full max-w-[480px] md:max-w-[540px] h-auto hidden dark:block drop-shadow-sm"
+              className="w-full max-w-[440px] md:max-w-[480px] h-auto hidden dark:block drop-shadow-sm"
             />
           </div>
 
           {/* Right Content Column (HTML Text & Button) */}
           <div className="w-full flex flex-col items-start text-left md:pl-4">
-            <p className="text-[11px] font-bold tracking-[0.15em] text-[#101011] dark:text-zinc-300 uppercase mb-3">
+            <p className="text-[11px] font-bold tracking-[0.15em] text-[#101011] dark:text-zinc-300 uppercase mb-2.5">
               ONE PLATFORM, UNLIMITED INTEGRATIONS
             </p>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-[2.65rem] font-bold leading-[1.15] text-[#101011] dark:text-white tracking-tight mb-4">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-[2.25rem] font-bold leading-[1.2] text-[#101011] dark:text-white tracking-tight mb-3.5">
               <span className="font-serif-italic italic font-medium text-[#3563f0] dark:text-[#3b82f6]">Connect the tools your team</span> already relies on.
             </h2>
-            <p className="text-sm sm:text-base leading-relaxed text-[#606266] dark:text-zinc-400 font-normal mb-6 max-w-lg">
+            <p className="text-xs sm:text-sm leading-relaxed text-[#606266] dark:text-zinc-400 font-normal mb-5 max-w-lg">
               Proofrr sits in the middle of your review process so files, calendars, calls, AI tools, and delivery workflows stay connected.
             </p>
             <Link
               href={INTEGRATIONS_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#101011] dark:bg-white text-white dark:text-[#101011] text-sm font-semibold shadow-md hover:opacity-90 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#101011] dark:bg-white text-white dark:text-[#101011] text-xs sm:text-sm font-semibold shadow-md hover:opacity-90 transition-all cursor-pointer"
             >
               <span>Explore integrations</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative z-10 flex flex-col items-center pt-14 md:pt-24 pb-14 w-full px-4 max-w-[1300px] mx-auto">
-        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-14">
-          <p className="text-[11px] font-bold tracking-[0.2em] text-[#3563f0] dark:text-[#3b82f6] uppercase mb-3">
+      <section className="relative z-10 flex flex-col items-center pt-12 md:pt-20 pb-12 w-full px-4 max-w-[1195px] mx-auto">
+        <div className="text-center max-w-4xl mx-auto mb-12 md:mb-[64px]">
+          <p className="text-[11px] font-bold tracking-[0.2em] text-[#3563f0] dark:text-[#3b82f6] uppercase mb-2.5">
             TESTIMONIALS
           </p>
-          <h2 className="font-heading text-[1.35rem] xs:text-2xl sm:text-4xl md:text-[3rem] lg:text-[3.25rem] font-bold leading-[1.12] text-[#101011] dark:text-white tracking-tight whitespace-nowrap">
+          <h2 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-[2.25rem] lg:text-[2.5rem] font-bold leading-[1.2] text-[#101011] dark:text-white tracking-tight">
             Teams that moved to Proofrr,{" "}
             <span className="font-serif-italic font-medium text-[#3563f0] dark:text-[#3b82f6] italic">
               love it.
@@ -401,19 +401,19 @@ export function LandingPage() {
           {TESTIMONIALS_DATA.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white dark:bg-zinc-900/90 border border-slate-200/80 dark:border-zinc-800 rounded-[1.85rem] p-7 sm:p-9 lg:p-10 flex flex-col justify-between shadow-[0_5px_25px_rgba(0,0,0,0.035)] dark:shadow-none hover:shadow-[0_12px_35px_rgba(53,99,240,0.09)] transition-all duration-300 hover:-translate-y-1 min-h-[320px] sm:min-h-[345px]"
+              className="bg-white dark:bg-zinc-900/90 border border-[#E9EDF3] dark:border-zinc-800 rounded-[20px] py-[30px] px-[25px] flex flex-col justify-between shadow-[0_5px_25px_rgba(0,0,0,0.035)] dark:shadow-none hover:shadow-[0_12px_35px_rgba(53,99,240,0.09)] transition-all duration-300 hover:-translate-y-1 min-h-[300px]"
             >
               <div>
-                <div className="flex items-center gap-1 mb-5">
+                <div className="flex items-center gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="w-[18px] h-[18px] fill-[#f59e0b] text-[#f59e0b]"
+                      className="w-4 h-4 fill-[#f59e0b] text-[#f59e0b]"
                     />
                   ))}
                 </div>
 
-                <p className="text-[15.5px] sm:text-[16.5px] lg:text-[17px] leading-[1.65] text-slate-700 dark:text-zinc-300 font-normal">
+                <p className="text-[13.5px] sm:text-[14.5px] leading-relaxed text-slate-700 dark:text-zinc-300 font-normal">
                   &ldquo;{testimonial.quotePrefix}
                   {testimonial.highlightText && (
                     <span className="text-[#3563f0] dark:text-[#3b82f6] font-semibold">
@@ -424,19 +424,19 @@ export function LandingPage() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3.5 mt-8 pt-1">
+              <div className="flex items-center gap-3 mt-6 pt-1">
                 <Image
                   src={testimonial.avatar}
                   alt={testimonial.author}
-                  width={52}
-                  height={52}
-                  className="w-12 h-12 sm:w-13 sm:h-13 rounded-full object-cover shrink-0"
+                  width={44}
+                  height={44}
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover shrink-0"
                 />
                 <div className="flex flex-col">
-                  <span className="text-[16px] font-bold text-[#101011] dark:text-white leading-tight">
+                  <span className="text-[14.5px] sm:text-[15px] font-bold text-[#101011] dark:text-white leading-tight">
                     {testimonial.author}
                   </span>
-                  <span className="text-[13px] text-[#8a8c94] dark:text-zinc-400 font-normal mt-0.5">
+                  <span className="text-[12px] sm:text-[12.5px] text-[#8a8c94] dark:text-zinc-400 font-normal mt-0.5">
                     {testimonial.role}
                   </span>
                 </div>
