@@ -142,7 +142,7 @@ export const TESTIMONIALS_DATA = [
     quoteSuffix: " Was an early beta user and not only the fact that you can compile all the feedback as actionables but also the team was super responsive to make changes and personalise the setup according to our needs.",
     author: "Shenjit",
     role: "Content Director",
-    avatar: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788962590/Mask_group_bhsrsi.png",
+    avatar: "https://res.cloudinary.com/djxnyqaya/image/upload/v1788962602/Mask_group_2_vivnpd.png",
   },
   {
     id: 2,

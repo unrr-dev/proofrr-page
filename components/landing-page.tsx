@@ -401,10 +401,10 @@ export function LandingPage() {
           {TESTIMONIALS_DATA.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white dark:bg-zinc-900/90 border border-slate-200/70 dark:border-zinc-800 rounded-[24px] py-8 px-7 sm:px-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 min-h-[310px]"
+              className="bg-white dark:bg-zinc-900/90 border border-slate-200/70 dark:border-zinc-800 rounded-[24px] py-7 px-7 sm:px-8 flex flex-col justify-start shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1"
             >
               <div>
-                <div className="flex items-center gap-1 mb-6">
+                <div className="flex items-center gap-1 mb-5">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star
                       key={i}
@@ -426,7 +426,7 @@ export function LandingPage() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3.5 mt-8 pt-1">
+              <div className="flex items-center gap-3.5 mt-7">
                 <Image
                   src={testimonial.avatar}
                   alt={testimonial.author}
