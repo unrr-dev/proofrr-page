@@ -401,42 +401,44 @@ export function LandingPage() {
           {TESTIMONIALS_DATA.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white dark:bg-zinc-900/90 border border-[#E9EDF3] dark:border-zinc-800 rounded-[20px] py-[30px] px-[25px] flex flex-col justify-between shadow-[0_5px_25px_rgba(0,0,0,0.035)] dark:shadow-none hover:shadow-[0_12px_35px_rgba(53,99,240,0.09)] transition-all duration-300 hover:-translate-y-1 min-h-[300px]"
+              className="bg-white dark:bg-zinc-900/90 border border-slate-200/70 dark:border-zinc-800 rounded-[24px] py-8 px-7 sm:px-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-none hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 min-h-[310px]"
             >
               <div>
-                <div className="flex items-center gap-1 mb-4">
+                <div className="flex items-center gap-1 mb-6">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-[#f59e0b] text-[#f59e0b]"
+                      className="w-[17px] h-[17px] fill-[#f59e0b] text-[#f59e0b]"
                     />
                   ))}
                 </div>
 
-                <p className="text-[13.5px] sm:text-[14.5px] leading-relaxed text-slate-700 dark:text-zinc-300 font-normal">
-                  &ldquo;{testimonial.quotePrefix}
+                <p className="text-[14.5px] sm:text-[15px] leading-[1.68] text-[#2d3748] dark:text-zinc-200 font-normal">
+                  &ldquo;
+                  {testimonial.quotePrefix}
                   {testimonial.highlightText && (
-                    <span className="text-[#3563f0] dark:text-[#3b82f6] font-semibold">
+                    <span className="text-[#2563eb] dark:text-[#3b82f6] font-bold">
                       {testimonial.highlightText}
                     </span>
                   )}
-                  {testimonial.quoteSuffix}&rdquo;
+                  {testimonial.quoteSuffix}
+                  &rdquo;
                 </p>
               </div>
 
-              <div className="flex items-center gap-3 mt-6 pt-1">
+              <div className="flex items-center gap-3.5 mt-8 pt-1">
                 <Image
                   src={testimonial.avatar}
                   alt={testimonial.author}
                   width={44}
                   height={44}
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover shrink-0"
+                  className="w-11 h-11 rounded-full object-cover shrink-0"
                 />
                 <div className="flex flex-col">
-                  <span className="text-[14.5px] sm:text-[15px] font-bold text-[#101011] dark:text-white leading-tight">
+                  <span className="text-[15px] font-bold text-[#1a202c] dark:text-white leading-tight">
                     {testimonial.author}
                   </span>
-                  <span className="text-[12px] sm:text-[12.5px] text-[#8a8c94] dark:text-zinc-400 font-normal mt-0.5">
+                  <span className="text-[13px] text-[#718096] dark:text-zinc-400 font-normal mt-0.5">
                     {testimonial.role}
                   </span>
                 </div>
