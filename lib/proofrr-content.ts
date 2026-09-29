@@ -23,6 +23,7 @@ export const FOOTER_ALL_PAGES = [
   { href: "/terms", label: "Terms & Conditions" },
   { href: "/contact", label: "Contact" },
   { href: "/blog", label: "Blog" },
+  { href: "/delete-account", label: "Delete Account" },
 ] as const;
 
 export const SOCIAL_LINKS = [
