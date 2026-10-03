@@ -149,7 +149,7 @@ function generateFeaturesFromApiPlan(plan: ApiPlan): string[] {
   features.push(formatLimit(plan.maxUsers, "User", "Users"));
   features.push(formatStorage(plan.maxStorageBytes));
   features.push(formatLimit(plan.maxProjects, "Project", "Projects"));
-  features.push(formatLimit(plan.maxBriefs, "Brief", "Briefs"));
+  features.push(formatLimit(plan.maxBriefs, "Creative", "Creatives"));
 
   if (plan.maxDocuments !== undefined && plan.maxDocuments !== null) {
     features.push(formatLimit(plan.maxDocuments, "Document", "Documents"));
