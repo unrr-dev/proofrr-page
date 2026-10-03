@@ -1,14 +1,23 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Leaf, Zap, Star, Layers, ShieldCheck, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 
+export type ApiPlan = {
+  id: number;
+  name: string;
+  maxStorageBytes: number;
+  maxUsers: number;
+  maxProjects: number;
+  maxBriefs: number;
+  maxDocuments: number;
+};
+
 type BillingCycle = "monthly" | "yearly";
 
-type PlanTier = {
-  id: string;
+type TierVisualMeta = {
   name: string;
   monthlyPrice: number | null;
   annualMonthlyPrice: number | null;
@@ -23,13 +32,11 @@ type PlanTier = {
     checkmark: string;
     border: string;
   };
-  features: string[];
   unlimitedAccess: string[];
 };
 
-const PLAN_TIERS: PlanTier[] = [
-  {
-    id: "FREE",
+const DEFAULT_METADATA: Record<string, TierVisualMeta> = {
+  FREE: {
     name: "Free",
     monthlyPrice: 0,
     annualMonthlyPrice: 0,
@@ -43,11 +50,9 @@ const PLAN_TIERS: PlanTier[] = [
       checkmark: "text-[#10b981]",
       border: "border border-slate-200/60 dark:border-zinc-800 shadow-[0_0_18px_rgba(0,0,0,0.08)]",
     },
-    features: ["3 Users", "100MB Storage", "5 Projects", "3 Briefs"],
     unlimitedAccess: ["Project Manager", "Notepad", "Task Tracker"],
   },
-  {
-    id: "LITE",
+  LITE: {
     name: "Lite",
     monthlyPrice: 15,
     annualMonthlyPrice: 10,
@@ -61,11 +66,9 @@ const PLAN_TIERS: PlanTier[] = [
       checkmark: "text-[#a855f7]",
       border: "border border-slate-200/60 dark:border-zinc-800 shadow-[0_0_18px_rgba(0,0,0,0.08)]",
     },
-    features: ["2 Users", "1GB Storage", "2 Projects", "10 Briefs"],
     unlimitedAccess: ["Project Manager", "Notepad", "Task Tracker"],
   },
-  {
-    id: "PLUS",
+  PLUS: {
     name: "Plus",
     monthlyPrice: 50,
     annualMonthlyPrice: 38,
@@ -80,11 +83,9 @@ const PLAN_TIERS: PlanTier[] = [
       checkmark: "text-[#f97316]",
       border: "border-2 border-[#0060ff] shadow-[0_0_18px_rgba(0,0,0,0.08)] dark:border-blue-500",
     },
-    features: ["3 Users", "50GB Storage", "5 Projects", "40 Briefs"],
     unlimitedAccess: ["Project Manager", "Notepad", "Task Tracker"],
   },
-  {
-    id: "PRO",
+  PRO: {
     name: "Pro",
     monthlyPrice: 100,
     annualMonthlyPrice: 69,
@@ -98,11 +99,9 @@ const PLAN_TIERS: PlanTier[] = [
       checkmark: "text-[#0060ff]",
       border: "border border-slate-200/60 dark:border-zinc-800 shadow-[0_0_18px_rgba(0,0,0,0.08)]",
     },
-    features: ["10 Users", "500GB Storage", "20 Projects", "200 Briefs"],
     unlimitedAccess: ["Project Manager", "Notepad", "Native Chat"],
   },
-  {
-    id: "ENTERPRISE",
+  ENTERPRISE: {
     name: "Enterprise",
     monthlyPrice: null,
     annualMonthlyPrice: null,
@@ -116,15 +115,78 @@ const PLAN_TIERS: PlanTier[] = [
       checkmark: "text-[#ec4899]",
       border: "border border-slate-200/60 dark:border-zinc-800 shadow-[0_0_18px_rgba(0,0,0,0.08)]",
     },
-    features: ["100 Users", "1TB Storage", "Unlimited Projects", "Unlimited Briefs"],
     unlimitedAccess: ["Project Manager", "Notepad", "Task Tracker"],
   },
+};
+
+const INITIAL_PLANS: ApiPlan[] = [
+  { id: 1, name: "FREE", maxStorageBytes: 262144000, maxUsers: 1, maxProjects: 2, maxBriefs: 2, maxDocuments: 1 },
+  { id: 7, name: "LITE", maxStorageBytes: 1073741824, maxUsers: 2, maxProjects: 2, maxBriefs: 10, maxDocuments: 5 },
+  { id: 2, name: "PLUS", maxStorageBytes: 53687091200, maxUsers: 3, maxProjects: 5, maxBriefs: 40, maxDocuments: -1 },
+  { id: 3, name: "PRO", maxStorageBytes: 536870912000, maxUsers: 10, maxProjects: 20, maxBriefs: 200, maxDocuments: -1 },
+  { id: 4, name: "ENTERPRISE", maxStorageBytes: -1, maxUsers: -1, maxProjects: -1, maxBriefs: -1, maxDocuments: -1 },
 ];
+
+function formatStorage(bytes: number): string {
+  if (bytes === -1) return "Unlimited Storage";
+  const gb = bytes / (1024 * 1024 * 1024);
+  if (gb >= 1) {
+    const roundedGb = Math.round(gb * 10) / 10;
+    return `${Number.isInteger(roundedGb) ? Math.round(gb) : roundedGb}GB Storage`;
+  }
+  const mb = bytes / (1024 * 1024);
+  return `${Math.round(mb)}MB Storage`;
+}
+
+function formatLimit(count: number, singular: string, plural: string): string {
+  if (count === -1) return `Unlimited ${plural}`;
+  if (count === 1) return `1 ${singular}`;
+  return `${count} ${plural}`;
+}
+
+function generateFeaturesFromApiPlan(plan: ApiPlan): string[] {
+  const features: string[] = [];
+  features.push(formatLimit(plan.maxUsers, "User", "Users"));
+  features.push(formatStorage(plan.maxStorageBytes));
+  features.push(formatLimit(plan.maxProjects, "Project", "Projects"));
+  features.push(formatLimit(plan.maxBriefs, "Brief", "Briefs"));
+
+  if (plan.maxDocuments !== undefined && plan.maxDocuments !== null) {
+    features.push(formatLimit(plan.maxDocuments, "Document", "Documents"));
+  }
+
+  return features;
+}
 
 export default function PricingContent() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
   const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const [apiPlans, setApiPlans] = useState<ApiPlan[]>(INITIAL_PLANS);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    async function loadPlans() {
+      try {
+        const res = await fetch("https://api.proofrr.com/api/plans");
+        if (res.ok) {
+          const data: ApiPlan[] = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            setApiPlans(data);
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching plans from API:", err);
+      }
+    }
+    loadPlans();
+  }, []);
+
+  const PLAN_ORDER = ["FREE", "LITE", "PLUS", "PRO", "ENTERPRISE"];
+  const sortedPlans = [...apiPlans].sort((a, b) => {
+    const idxA = PLAN_ORDER.indexOf(a.name.toUpperCase());
+    const idxB = PLAN_ORDER.indexOf(b.name.toUpperCase());
+    return (idxA !== -1 ? idxA : 99) - (idxB !== -1 ? idxB : 99);
+  });
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
@@ -220,28 +282,47 @@ export default function PricingContent() {
           </Reveal>
         </div>
 
-        {/* Pricing Cards Horizontal Slider on Mobile / Grid on Desktop */}
+        {/* Dynamic Pricing Cards */}
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
           className="mt-8 md:mt-16 flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none gap-4 lg:gap-6 items-stretch md:items-start max-w-[1380px] mx-auto px-4 md:px-6 pt-5 pb-6 scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid-cols-3 lg:grid-cols-5"
         >
-          {PLAN_TIERS.map((tier, index) => {
-            const Icon = tier.icon;
-            const isPlus = tier.id === "PLUS";
+          {sortedPlans.map((plan, index) => {
+            const planKey = plan.name.toUpperCase();
+            const meta = DEFAULT_METADATA[planKey] || {
+              name: plan.name,
+              monthlyPrice: null,
+              annualMonthlyPrice: null,
+              description: "Custom plan details.",
+              ctaText: "Select Plan",
+              ctaClass: "bg-[#0060ff] text-white rounded-[8px]",
+              icon: Zap,
+              theme: {
+                iconBg: "bg-[#e8f2ff]",
+                iconText: "text-[#0060ff]",
+                checkmark: "text-[#0060ff]",
+                border: "border border-slate-200/60 dark:border-zinc-800 shadow-[0_0_18px_rgba(0,0,0,0.08)]",
+              },
+              unlimitedAccess: ["Project Manager", "Notepad"],
+            };
+
+            const Icon = meta.icon;
+            const isPlus = planKey === "PLUS";
+            const features = generateFeaturesFromApiPlan(plan);
 
             let displayPrice = "";
-            if (tier.monthlyPrice === null) {
+            if (meta.monthlyPrice === null) {
               displayPrice = "Contact Us";
             } else if (billingCycle === "yearly") {
-              displayPrice = `$${tier.annualMonthlyPrice}`;
+              displayPrice = `$${meta.annualMonthlyPrice}`;
             } else {
-              displayPrice = `$${tier.monthlyPrice}`;
+              displayPrice = `$${meta.monthlyPrice}`;
             }
 
             return (
               <Reveal
-                key={tier.id}
+                key={plan.id}
                 delay={index * 0.03}
                 className="flex shrink-0 snap-center w-[70vw] max-w-[240px] sm:w-[240px] md:max-w-none md:w-auto md:shrink md:snap-align-none h-auto"
               >
@@ -251,13 +332,13 @@ export default function PricingContent() {
                     isPlus
                       ? "pt-3 px-3.5 pb-5 md:pb-6.5 z-10 shadow-lg md:translate-y-2"
                       : "p-3.5 md:p-4",
-                    tier.theme.border
+                    meta.theme.border
                   )}
                 >
-                  {/* Top Badge for Plus Plan */}
-                  {isPlus && (
+                  {/* Top Badge */}
+                  {meta.badge && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0038b8] via-[#0055ff] to-[#0088ff] text-white text-[12px] font-bold px-7 md:px-8 py-1.5 rounded-full shadow-md whitespace-nowrap z-20">
-                      Most Popular
+                      {meta.badge}
                     </div>
                   )}
 
@@ -267,20 +348,20 @@ export default function PricingContent() {
                       <div
                         className={cn(
                           "w-7 h-7 rounded-full flex items-center justify-center shrink-0",
-                          tier.theme.iconBg,
-                          tier.theme.iconText
+                          meta.theme.iconBg,
+                          meta.theme.iconText
                         )}
                       >
                         <Icon className="w-4 h-4 stroke-[2.5]" />
                       </div>
                       <h3 className="font-bold text-[17px] text-[#0f172a] dark:text-white">
-                        {tier.name}
+                        {meta.name}
                       </h3>
                     </div>
 
                     {/* Price */}
                     <div className="mt-2">
-                      {tier.monthlyPrice !== null ? (
+                      {meta.monthlyPrice !== null ? (
                         <div className="flex items-baseline gap-1">
                           <span className="text-[28px] font-bold text-[#0f172a] dark:text-white tracking-tight leading-none">
                             {displayPrice}
@@ -296,7 +377,7 @@ export default function PricingContent() {
 
                     {/* Description */}
                     <p className="mt-1.5 text-[11.5px] leading-snug text-slate-600 dark:text-zinc-300 min-h-[28px]">
-                      {tier.description}
+                      {meta.description}
                     </p>
 
                     {/* CTA Button */}
@@ -304,17 +385,17 @@ export default function PricingContent() {
                       type="button"
                       className={cn(
                         "mt-3 w-full py-1.5 px-3 text-[12px] font-bold transition-all duration-200 cursor-pointer text-center",
-                        tier.ctaClass
+                        meta.ctaClass
                       )}
                     >
-                      {tier.ctaText}
+                      {meta.ctaText}
                     </button>
 
-                    {/* Features list */}
+                    {/* Dynamic API Features list */}
                     <div className="mt-3 space-y-2">
-                      {tier.features.map((feature) => (
+                      {features.map((feature) => (
                         <div key={feature} className="flex items-center gap-2 text-[11.5px] font-semibold text-[#334155] dark:text-zinc-200">
-                          <Check className={cn("w-3 h-3 shrink-0 stroke-[2.5]", tier.theme.checkmark)} />
+                          <Check className={cn("w-3 h-3 shrink-0 stroke-[2.5]", meta.theme.checkmark)} />
                           <span>{feature}</span>
                         </div>
                       ))}
@@ -327,9 +408,9 @@ export default function PricingContent() {
                       Unlimited access
                     </p>
                     <div className="space-y-2">
-                      {tier.unlimitedAccess.map((accessItem) => (
+                      {meta.unlimitedAccess.map((accessItem) => (
                         <div key={accessItem} className="flex items-center gap-2 text-[11.5px] font-semibold text-[#334155] dark:text-zinc-200">
-                          <Check className={cn("w-3 h-3 shrink-0 stroke-[2.5]", tier.theme.checkmark)} />
+                          <Check className={cn("w-3 h-3 shrink-0 stroke-[2.5]", meta.theme.checkmark)} />
                           <span>{accessItem}</span>
                         </div>
                       ))}
@@ -343,20 +424,25 @@ export default function PricingContent() {
 
         {/* Mobile Swipe Pagination Dots */}
         <div className="flex md:hidden justify-center items-center gap-2 mt-2">
-          {PLAN_TIERS.map((tier, index) => (
-            <button
-              key={tier.id}
-              type="button"
-              onClick={() => scrollToCard(index)}
-              className={cn(
-                "h-2 rounded-full transition-all duration-300 cursor-pointer",
-                activeCardIndex === index
-                  ? "w-6 bg-[#0060ff]"
-                  : "w-2 bg-slate-300 dark:bg-zinc-700"
-              )}
-              aria-label={`Go to ${tier.name} plan`}
-            />
-          ))}
+          {sortedPlans.map((plan, index) => {
+            const planKey = plan.name.toUpperCase();
+            const meta = DEFAULT_METADATA[planKey];
+            const name = meta ? meta.name : plan.name;
+            return (
+              <button
+                key={plan.id}
+                type="button"
+                onClick={() => scrollToCard(index)}
+                className={cn(
+                  "h-2 rounded-full transition-all duration-300 cursor-pointer",
+                  activeCardIndex === index
+                    ? "w-6 bg-[#0060ff]"
+                    : "w-2 bg-slate-300 dark:bg-zinc-700"
+                )}
+                aria-label={`Go to ${name} plan`}
+              />
+            );
+          })}
         </div>
       </section>
     </div>

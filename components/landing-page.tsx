@@ -31,6 +31,7 @@ import { ProofrrDemoVideo } from "@/components/proofrr-demo-video";
 import { ProofrrLinkButton } from "@/components/proofrr-link-button";
 import { Reveal } from "@/components/reveal";
 import { WordReveal } from "@/components/word-reveal";
+import { IntegrationHub } from "@/components/integration-hub";
 
 const SHADED_CELLS = [
   { r: 1, c: 3 },
@@ -339,24 +340,9 @@ export function LandingPage() {
 
       <section id="integrations" className="relative z-10 flex flex-col items-center pt-10 md:pt-20 px-4 max-w-[1195px] mx-auto">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left Diagram Card Image */}
+          {/* Left Diagram Interactive Integration Hub */}
           <div className="w-full flex justify-center">
-            {/* Light Mode Diagram Image */}
-            <Image
-              src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353459/Proofrr_connections_image_3_pgohb7.png"
-              alt="Proofrr Integrations Diagram"
-              width={540}
-              height={540}
-              className="w-full max-w-[440px] md:max-w-[480px] h-auto dark:hidden drop-shadow-sm"
-            />
-            {/* Dark Mode Diagram Image */}
-            <Image
-              src="https://res.cloudinary.com/djxnyqaya/image/upload/v1788353506/Proofrr_connections_image_4_vkdieo.png"
-              alt="Proofrr Integrations Diagram"
-              width={540}
-              height={540}
-              className="w-full max-w-[440px] md:max-w-[480px] h-auto hidden dark:block drop-shadow-sm"
-            />
+            <IntegrationHub />
           </div>
 
           {/* Right Content Column (HTML Text & Button) */}
