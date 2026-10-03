@@ -167,7 +167,10 @@ export default function PricingContent() {
   useEffect(() => {
     async function loadPlans() {
       try {
-        const res = await fetch("https://api.proofrr.com/api/plans");
+        let res = await fetch("/api/plans");
+        if (!res.ok) {
+          res = await fetch("https://api.proofrr.com/api/plans");
+        }
         if (res.ok) {
           const data: ApiPlan[] = await res.json();
           if (Array.isArray(data) && data.length > 0) {
